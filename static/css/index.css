@@ -251,13 +251,17 @@ body {
 .team-container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 990px;
-  gap: 6px 8px;
+  max-width: 1080px;
+  gap: 6px 6px;
+  /* sans quoi chaque colonne centre son contenu et les photos se decalent
+     verticalement des qu'un nom prend une ligne de plus */
+  align-items: flex-start;
 }
 
 .team-member {
-  width: 115px;
+  width: 128px;
   justify-content: center;
+  font-size: 15px;
 }
 
 .team-member a {
