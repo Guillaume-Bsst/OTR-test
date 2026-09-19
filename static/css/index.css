@@ -248,8 +248,15 @@ body {
    d'une quantite differente selon sa longueur. On le fait remplir la
    colonne, ce qui centre le nom et, plus tard, la photo (dont le
    width:75% se resout alors sur la colonne). */
+.team-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 520px;
+  gap: 6px 10px;
+}
+
 .team-member {
-  width: 24%;
+  width: 120px;
   justify-content: center;
 }
 
@@ -264,6 +271,6 @@ body {
    la colonne reste large (pour le 4+4), la vignette est bornee en dur.
    max-width est LE chiffre a regler si elles doivent encore changer. */
 .team-member img {
-  width: 40%;
+  width: 90px;
   max-width: 90px;
 }
