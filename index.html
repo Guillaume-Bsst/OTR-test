@@ -2,23 +2,27 @@
 <html lang="en">
 
 <head>
-    <title>OTRetarget: Joint Human and Multi-Object Kinematic Retargeting via Optimal Transport</title>
+    <title>OTRetarget: Joint Robot and Object Motion Retargeting via Optimal Transport</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- TODO: Open Graph = l'apercu affiche quand le lien est partage (X, Slack, LinkedIn). -->
+    <!-- Open Graph = l'apercu affiche quand le lien est partage (X, Slack, LinkedIn). -->
     <meta property="og:site_name" content="Simple Robotics" />
-    <meta property="og:title" content="OTRetarget: Joint Human and Multi-Object Kinematic Retargeting via Optimal Transport" />
-    <meta property="og:description" content="TODO: une phrase de resume." />
+    <meta property="og:title" content="OTRetarget: Joint Robot and Object Motion Retargeting via Optimal Transport" />
+    <meta property="og:description"
+        content="Jointly retargeting robot and multi-object motion from human demonstrations, using entropic optimal transport to transfer surface interactions." />
+    <!-- TODO: figer l'URL definitive de la page, ici et dans main.tex (\blfootnote{Project page: ...}) -->
     <meta property="og:url" content="https://simple-robotics.github.io/publications/otretarget/" />
-    <!-- TODO: image d'apercu, 1200x630 px ideallement -->
-    <meta property="og:image" content="./static/images/teaser.png" />
+    <meta property="og:image" content="./static/images/teaser.jpg" />
     <meta property="og:type" content="article" />
     <meta property="article:section" content="Research" />
-    <meta property="article:tag" content="Retargeting" />
+    <meta property="article:tag" content="Motion Retargeting" />
     <meta property="article:tag" content="Optimal Transport" />
-    <meta property="article:tag" content="Humanoid" />
-    <!-- TODO: une ligne article:author par auteur -->
+    <meta property="article:tag" content="Humanoid Robots" />
+    <meta property="article:tag" content="Loco-manipulation" />
+    <meta property="article:author" content="https://fabinsch.github.io/" />
+    <meta property="article:author" content="https://jcarpent.github.io" />
+    <!-- TODO: une ligne article:author par auteur ayant une page perso -->
 
     <link rel="icon" type="image/png" sizes="512x512" href="./static/images/favicon.png">
 
@@ -82,8 +86,8 @@
                 <div class="container is-widescreen">
                     <div class="columns is-centered">
                         <div class="column has-text-centered">
-                            <h1 class="title is-1 publication-title">OTRetarget: <br> Joint Human and Multi-Object
-                                Kinematic Retargeting via Optimal Transport
+                            <h1 class="title is-1 publication-title">OTRetarget: <br> Joint Robot and Object Motion
+                                Retargeting via Optimal Transport
                             </h1>
 
                             <div class="column has-text-centered">
@@ -98,7 +102,7 @@
                                             <span>Paper</span>
                                         </a>
                                     </span>
-                                    <!-- TODO: remplacer XXXX.XXXXX par l'ID arXiv -->
+                                    <!-- TODO: remplacer XXXX.XXXXX par l'ID arXiv une fois depose -->
                                     <span class="link-block">
                                         <a href="https://arxiv.org/abs/XXXX.XXXXX"
                                             class="external-link button is-normal is-rounded is-dark">
@@ -121,21 +125,76 @@
                                 </div>
                             </div>
 
-                            <!-- TODO: un bloc team-member par auteur.
-                                 La photo va dans static/images/authors/ ; decommenter la balise img
-                                 une fois le fichier depose, sinon l'image apparait cassee. -->
+                            <!-- TODO: les photos vont dans static/images/authors/ ; decommenter la balise
+                                 img de l'auteur une fois son fichier depose. Les <a> sans href sont
+                                 les auteurs dont je n'avais pas la page perso : ajouter href="...". -->
                             <div class="team-container">
                                 <div class="team-member">
-                                    <a href="#" target="_blank">
+                                    <a>
                                         <!-- <img src="./static/images/authors/guillaume_besset.jpg" alt="Guillaume Besset" loading="lazy"> -->
-                                        <div>Guillaume<br>Besset<sup>1</sup></div>
+                                        <div>Guillaume<br>Besset<sup>*,1</sup></div>
+                                    </a>
+                                </div>
+
+                                <div class="team-member">
+                                    <a>
+                                        <!-- <img src="./static/images/authors/erwann_carn.jpg" alt="Erwann Carn" loading="lazy"> -->
+                                        <div>Erwann<br>Carn<sup>*,1</sup></div>
+                                    </a>
+                                </div>
+
+                                <div class="team-member">
+                                    <a>
+                                        <!-- <img src="./static/images/authors/timothee_carecchio.jpg" alt="Timothee Carecchio" loading="lazy"> -->
+                                        <div>Timoth&eacute;e<br>Carecchio<sup>1</sup></div>
+                                    </a>
+                                </div>
+
+                                <div class="team-member">
+                                    <a>
+                                        <!-- <img src="./static/images/authors/valentin_tordjman_levavasseur.jpg" alt="Valentin Tordjman-Levavasseur" loading="lazy"> -->
+                                        <div>Valentin<br>Tordjman&ndash;Levavasseur<sup>1</sup></div>
+                                    </a>
+                                </div>
+
+                                <div class="team-member">
+                                    <a href="https://fabinsch.github.io/" target="_blank">
+                                        <!-- <img src="./static/images/authors/fabian_schramm.png" alt="Fabian Schramm" loading="lazy"> -->
+                                        <div>Fabian<br>Schramm<sup>1</sup></div>
+                                    </a>
+                                </div>
+
+                                <div class="team-member">
+                                    <a>
+                                        <!-- <img src="./static/images/authors/yann_de_mont_marin.jpg" alt="Yann de Mont-Marin" loading="lazy"> -->
+                                        <div>Yann<br>de Mont-Marin<sup>1</sup></div>
+                                    </a>
+                                </div>
+
+                                <div class="team-member">
+                                    <a href="https://jcarpent.github.io" target="_blank">
+                                        <!-- <img src="./static/images/authors/justin_carpentier.jpg" alt="Justin Carpentier" loading="lazy"> -->
+                                        <div>Justin<br>Carpentier<sup>1</sup></div>
+                                    </a>
+                                </div>
+
+                                <div class="team-member">
+                                    <a>
+                                        <!-- <img src="./static/images/authors/ajay_suresha_sathya.jpg" alt="Ajay Suresha Sathya" loading="lazy"> -->
+                                        <div>Ajay<br>Suresha Sathya<sup>1,2</sup></div>
                                     </a>
                                 </div>
                             </div>
 
                             <div class="is-size-5">
-                                <span class="author-block"><sup>1</sup>Inria and &Eacute;cole Normale Sup&eacute;rieure,
-                                    PSL Research University, Paris, France.</span>
+                                <span class="author-block"><sup>*</sup>Equal contribution.</span>
+                                <br>
+                                <span class="author-block"><sup>1</sup>Inria &ndash; D&eacute;partement
+                                    d'Informatique de l'&Eacute;cole normale sup&eacute;rieure, PSL Research
+                                    University, Paris, France.</span>
+                                <br>
+                                <span class="author-block"><sup>2</sup>Dept. of Aeronautics and Astronautics,
+                                    Stanford University, CA, USA.</span>
                             </div>
                         </div>
                     </div>
@@ -145,8 +204,26 @@
     </section>
 
 
-    <!-- TEASER : la video d'ouverture.
-         Deposer le fichier dans static/videos/ puis decommenter ce bloc.
+    <!-- TEASER -->
+    <section class="hero teaser">
+        <div class="container is-max-widescreen">
+            <div class="hero-body">
+                <img src="./static/images/teaser.jpg"
+                    alt="OTRetarget for whole-body loco-manipulation: box pickup, quadrupedal crawling, and a full-body spin."
+                    style="width:100%">
+                <h2 class="subtitle has-text-centered">
+                    <b>OTRetarget for whole-body loco-manipulation.</b> Our approach jointly retargets robot and
+                    object motion while preserving interactions with the ground and surrounding objects, without
+                    rescaling the scene or demonstration. Overlaid poses show successive instants of the retargeted
+                    motions: <b>a)</b> two-handed box pickup and placement onto a table; <b>b)</b> quadrupedal
+                    crawling with hand&ndash;ground contact; and <b>c)</b> locomotion with a full-body spin.
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- TODO: video teaser. Deposer le fichier dans static/videos/ puis decommenter,
+         et retirer le bloc image ci-dessus si la video le remplace.
     <section class="hero teaser">
         <div class="container is-max-desktop">
             <div class="hero-body">
@@ -166,7 +243,24 @@
                 <div class="column is-four-fifths">
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
-                        TODO: coller ici l'abstract du papier.
+                        Transferring human motion to humanoid robots requires adapting the demonstrated motion to the
+                        robot morphology while preserving interactions with the environment. This is particularly
+                        challenging for loco-manipulation tasks, where contacts with the ground and manipulated objects
+                        must remain consistent despite differences in body proportions. Yet, skeletal motion alone does
+                        not fully describe these interactions, and fixing object trajectories limits the adaptation to a
+                        new embodiment. In this paper, we introduce <b>OTRetarget</b>, a unified approach to jointly
+                        retarget robot and multi-object motion from human demonstrations. Our approach represents
+                        surface interactions through signed distances, closest surface points, and relative directions,
+                        and uses entropic optimal transport to transfer these quantities across human, robot, and object
+                        geometries. We incorporate the resulting interaction targets into a constrained inverse
+                        kinematics formulation that balances contact preservation with motion style and jointly
+                        optimizes robot and object poses at each frame. This formulation accommodates robot&ndash;object
+                        and object&ndash;object interactions without rescaling the scene or the demonstration.
+                        <b>We validate the proposed approach on OMOMO, where it achieves a robot&ndash;object
+                            interaction Jaccard score of 87% and a depth error of 8.7&nbsp;mm, compared with 28% and
+                            29.3&nbsp;mm for OmniRetarget.</b> Finally, we demonstrate transfer to a physical G1
+                        humanoid using whole-body policies trained with reinforcement learning on the retargeted
+                        references, across motions including two-handed box pick-and-place onto a table.
                     </div>
                 </div>
             </div>
@@ -204,10 +298,13 @@
     <section class="section" id="BibTeX">
         <div class="container is-max-desktop content">
             <h2 class="title">BibTeX</h2>
-            <pre><code>@article{TODO,
-  title={OTRetarget: Joint Human and Multi-Object Kinematic Retargeting via Optimal Transport},
-  author={TODO},
-  journal={TODO},
+            <!-- TODO: remplacer XXXX.XXXXX par l'ID arXiv une fois depose -->
+            <pre><code>@article{besset2026otretarget,
+  title={OTRetarget: Joint Robot and Object Motion Retargeting via Optimal Transport},
+  author={Besset, Guillaume and Carn, Erwann and Carecchio, Timoth{\'e}e and
+          Tordjman--Levavasseur, Valentin and Schramm, Fabian and
+          de Mont-Marin, Yann and Carpentier, Justin and Sathya, Ajay Suresha},
+  journal={arXiv preprint arXiv:XXXX.XXXXX},
   year={2026}
 }</code></pre>
         </div>
