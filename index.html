@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="./static/css/index.css?v=7">
+    <link rel="stylesheet" href="./static/css/index.css?v=8">
 
 </head>
 
@@ -93,16 +93,6 @@
 
                             <div class="column has-text-centered">
                                 <div class="publication-links">
-                                    <!-- TODO: deposer le PDF dans static/paper/otretarget.pdf -->
-                                    <span class="link-block">
-                                        <a href="./static/paper/otretarget.pdf"
-                                            class="external-link button is-normal is-rounded is-dark">
-                                            <span class="icon">
-                                                <i class="fas fa-file-pdf"></i>
-                                            </span>
-                                            <span>Paper</span>
-                                        </a>
-                                    </span>
                                     <!-- TODO: remplacer XXXX.XXXXX par l'ID arXiv une fois depose -->
                                     <span class="link-block">
                                         <a href="https://arxiv.org/abs/XXXX.XXXXX"
@@ -113,10 +103,11 @@
                                             <span>arXiv</span>
                                         </a>
                                     </span>
-                                    <!-- TODO: lien du depot public, ou supprimer ce bouton -->
+                                    <!-- TODO: quand le depot est public, remettre un href et retirer
+                                         la classe code-soon (la bulle disparait avec elle) -->
                                     <span class="link-block">
-                                        <a href="#"
-                                            class="external-link button is-normal is-rounded is-dark">
+                                        <a class="external-link button is-normal is-rounded is-dark code-soon"
+                                            aria-label="Code coming soon">
                                             <span class="icon">
                                                 <i class="fab fa-github"></i>
                                             </span>

@@ -278,3 +278,46 @@ body {
   width: 90px;
   max-width: 90px;
 }
+
+/* Bulle au survol du bouton Code, tant que le depot n'est pas publie.
+   Retirer la classe code-soon dans index.html la fait disparaitre. */
+.code-soon {
+  position: relative;
+  cursor: default;
+}
+
+.code-soon::after {
+  content: "Coming soon";
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #363636;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: normal;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.code-soon::before {
+  content: "";
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #363636;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.code-soon:hover::after,
+.code-soon:hover::before {
+  opacity: 1;
+}
