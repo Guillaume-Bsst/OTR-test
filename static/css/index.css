@@ -258,3 +258,12 @@ body {
   width: 100%;
   text-align: center;
 }
+
+/* La photo fait 75% de sa colonne dans le CSS d'origine ; en elargissant les
+   colonnes a 24% on grossissait donc les vignettes d'autant. On decouple :
+   la colonne reste large (pour le 4+4), la vignette est bornee en dur.
+   max-width est LE chiffre a regler si elles doivent encore changer. */
+.team-member img {
+  width: 50%;
+  max-width: 130px;
+}
