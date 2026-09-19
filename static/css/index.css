@@ -281,9 +281,21 @@ body {
 
 /* Bulle au survol du bouton Code, tant que le depot n'est pas publie.
    Retirer la classe code-soon dans index.html la fait disparaitre. */
+/* .button.is-dark de Bulma a deux classes : il faut au moins autant de
+   specificite pour le griser, d'ou .button.code-soon et pas .code-soon seul. */
+.button.code-soon,
+.button.code-soon:hover,
+.button.code-soon:focus,
+.button.code-soon:active {
+  background-color: #9a9a9a;
+  border-color: #9a9a9a;
+  color: #fff;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
 .code-soon {
   position: relative;
-  cursor: default;
 }
 
 .code-soon::after {
