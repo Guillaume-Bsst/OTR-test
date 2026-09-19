@@ -13,7 +13,6 @@
         content="Jointly retargeting robot and multi-object motion from human demonstrations, using entropic optimal transport to transfer surface interactions." />
     <!-- TODO: figer l'URL definitive de la page, ici et dans main.tex (\blfootnote{Project page: ...}) -->
     <meta property="og:url" content="https://simple-robotics.github.io/publications/otretarget/" />
-    <meta property="og:image" content="./static/images/teaser.jpg" />
     <meta property="og:type" content="article" />
     <meta property="article:section" content="Research" />
     <meta property="article:tag" content="Motion Retargeting" />
@@ -199,39 +198,6 @@
         </div>
     </section>
 
-
-    <!-- TEASER -->
-    <section class="hero teaser">
-        <div class="container is-max-widescreen">
-            <div class="hero-body">
-                <img src="./static/images/teaser.jpg"
-                    alt="OTRetarget for whole-body loco-manipulation: box pickup, quadrupedal crawling, and a full-body spin."
-                    style="width:100%">
-                <h2 class="subtitle has-text-centered">
-                    <b>OTRetarget for whole-body loco-manipulation.</b> Our approach jointly retargets robot and
-                    object motion while preserving interactions with the ground and surrounding objects, without
-                    rescaling the scene or demonstration. Overlaid poses show successive instants of the retargeted
-                    motions: <b>a)</b> two-handed box pickup and placement onto a table; <b>b)</b> quadrupedal
-                    crawling with hand&ndash;ground contact; and <b>c)</b> locomotion with a full-body spin.
-                </h2>
-            </div>
-        </div>
-    </section>
-
-    <!-- TODO: video teaser. Deposer le fichier dans static/videos/ puis decommenter,
-         et retirer le bloc image ci-dessus si la video le remplace.
-    <section class="hero teaser">
-        <div class="container is-max-desktop">
-            <div class="hero-body">
-                <video id="teaser" autoplay muted loop playsinline width="100%">
-                    <source src="./static/videos/teaser.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </section>
-    -->
-
-
     <section class="section">
         <div class="container is-max-desktop">
             <!-- Abstract. -->
@@ -262,71 +228,6 @@
             </div>
             <!--/ Abstract. -->
 
-            <!-- Hardware -->
-            <div class="columns is-centered has-text-centered">
-                <div class="column is-max-desktop">
-                    <h2 class="title is-3">Transfer to a physical G1</h2>
-                    <div class="content has-text-justified">
-                        Whole-body tracking policies trained with reinforcement learning on the retargeted
-                        references alone, executed on a physical Unitree G1. Where an inset is shown, it carries
-                        the human demonstration together with the retargeted reference the policy was trained
-                        to track.
-                    </div>
-                    <div class="columns">
-                        <div class="column">
-                            <video controls preload="none" playsinline width="100%"
-                                poster="./static/images/posters/hw_chacha.jpg">
-                                <source src="./static/videos/hw_chacha.mp4" type="video/mp4">
-                            </video>
-                            <p class="is-size-6">Cha-cha</p>
-                        </div>
-                        <!-- TODO: remplacer par les versions montees avec encart (Erwann) -->
-                        <div class="column">
-                            <video controls preload="none" playsinline width="100%"
-                                poster="./static/images/posters/hw_crawl.jpg">
-                                <source src="./static/videos/hw_crawl.mp4" type="video/mp4">
-                            </video>
-                            <p class="is-size-6">Quadrupedal crawling</p>
-                        </div>
-                        <div class="column">
-                            <video controls preload="none" playsinline width="100%"
-                                poster="./static/images/posters/hw_spin.jpg">
-                                <source src="./static/videos/hw_spin.mp4" type="video/mp4">
-                            </video>
-                            <p class="is-size-6">Full-body spin</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--/ Hardware -->
-
-            <!-- Section de resultats 2. -->
-            <div class="columns is-centered has-text-centered">
-                <div class="column is-max-desktop">
-                    <h2 class="title is-3">TODO: titre de la deuxieme section</h2>
-                    <div class="content has-text-justified">
-                        TODO: texte.
-                    </div>
-                </div>
-            </div>
-            <!--/ Section 2 -->
-
-
-        </div>
-    </section>
-
-    <section class="section" id="BibTeX">
-        <div class="container is-max-desktop content">
-            <h2 class="title">BibTeX</h2>
-            <!-- TODO: remplacer XXXX.XXXXX par l'ID arXiv une fois depose -->
-            <pre><code>@article{besset2026otretarget,
-  title={OTRetarget: Joint Robot and Object Motion Retargeting via Optimal Transport},
-  author={Besset, Guillaume and Carn, Erwann and Carecchio, Timoth{\'e}e and
-          Tordjman--Levavasseur, Valentin and Schramm, Fabian and
-          de Mont-Marin, Yann and Carpentier, Justin and Sathya, Ajay Suresha},
-  journal={arXiv preprint arXiv:XXXX.XXXXX},
-  year={2026}
-}</code></pre>
         </div>
     </section>
     <footer class="footer">
