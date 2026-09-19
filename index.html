@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>OTRetarget: Joint Human and Multi-Object Kinematic Retargeting via Optimal Transport</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- TODO: Open Graph = l'apercu affiche quand le lien est partage (X, Slack, LinkedIn). -->
+    <meta property="og:site_name" content="Simple Robotics" />
+    <meta property="og:title" content="OTRetarget: Joint Human and Multi-Object Kinematic Retargeting via Optimal Transport" />
+    <meta property="og:description" content="TODO: une phrase de resume." />
+    <meta property="og:url" content="https://simple-robotics.github.io/publications/otretarget/" />
+    <!-- TODO: image d'apercu, 1200x630 px ideallement -->
+    <meta property="og:image" content="./static/images/teaser.png" />
+    <meta property="og:type" content="article" />
+    <meta property="article:section" content="Research" />
+    <meta property="article:tag" content="Retargeting" />
+    <meta property="article:tag" content="Optimal Transport" />
+    <meta property="article:tag" content="Humanoid" />
+    <!-- TODO: une ligne article:author par auteur -->
+
+    <link rel="icon" type="image/png" sizes="512x512" href="./static/images/favicon.png">
+
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+</head>
+
+
+
+<body>
+    <!-- Navigation bar at the top -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+                <a class="navbar-item" href="https://simple-robotics.github.io">
+                    <span class="icon">
+                        <i class="fas fa-home"></i>
+                    </span>
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        More Research
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item"
+                            href="https://simple-robotics.github.io/publications/guided-flow-policy/">
+                            Guided Flow Policy
+                        </a>
+                        <a class="navbar-item"
+                            href="https://simple-robotics.github.io/publications/simple-contact-solver/">
+                            Simple simulator
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- TITLE -->
+    <section class="hero">
+        <div class="my-first-section">
+            <div class="hero-body">
+                <div class="container is-widescreen">
+                    <div class="columns is-centered">
+                        <div class="column has-text-centered">
+                            <h1 class="title is-1 publication-title">OTRetarget: <br> Joint Human and Multi-Object
+                                Kinematic Retargeting via Optimal Transport
+                            </h1>
+
+                            <div class="column has-text-centered">
+                                <div class="publication-links">
+                                    <!-- TODO: deposer le PDF dans static/paper/otretarget.pdf -->
+                                    <span class="link-block">
+                                        <a href="./static/paper/otretarget.pdf"
+                                            class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                                <i class="fas fa-file-pdf"></i>
+                                            </span>
+                                            <span>Paper</span>
+                                        </a>
+                                    </span>
+                                    <!-- TODO: remplacer XXXX.XXXXX par l'ID arXiv -->
+                                    <span class="link-block">
+                                        <a href="https://arxiv.org/abs/XXXX.XXXXX"
+                                            class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                                <i class="ai ai-arxiv"></i>
+                                            </span>
+                                            <span>arXiv</span>
+                                        </a>
+                                    </span>
+                                    <!-- TODO: lien du depot public, ou supprimer ce bouton -->
+                                    <span class="link-block">
+                                        <a href="#"
+                                            class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                                <i class="fab fa-github"></i>
+                                            </span>
+                                            <span>Code</span>
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- TODO: un bloc team-member par auteur.
+                                 La photo va dans static/images/authors/ ; decommenter la balise img
+                                 une fois le fichier depose, sinon l'image apparait cassee. -->
+                            <div class="team-container">
+                                <div class="team-member">
+                                    <a href="#" target="_blank">
+                                        <!-- <img src="./static/images/authors/guillaume_besset.jpg" alt="Guillaume Besset" loading="lazy"> -->
+                                        <div>Guillaume<br>Besset<sup>1</sup></div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="is-size-5">
+                                <span class="author-block"><sup>1</sup>Inria and &Eacute;cole Normale Sup&eacute;rieure,
+                                    PSL Research University, Paris, France.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TEASER : la video d'ouverture.
+         Deposer le fichier dans static/videos/ puis decommenter ce bloc.
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                <video id="teaser" autoplay muted loop playsinline width="100%">
+                    <source src="./static/videos/teaser.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+    -->
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        TODO: coller ici l'abstract du papier.
+                    </div>
+                </div>
+            </div>
+            <!--/ Abstract. -->
+
+            <!-- Section de resultats 1. Dupliquer ce bloc autant de fois que necessaire. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-max-desktop">
+                    <h2 class="title is-3">TODO: titre de la premiere section</h2>
+                    <div class="publication-image">
+                        <!-- <img src="./static/images/figure.png" alt="TODO" style="width:90%"> -->
+                    </div>
+                    <div class="content has-text-justified">
+                        TODO: texte. Les formules LaTeX marchent : \( x = y \) en ligne, \[ x = y \] centree.
+                    </div>
+                </div>
+            </div>
+            <!--/ Section 1 -->
+
+            <!-- Section de resultats 2. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-max-desktop">
+                    <h2 class="title is-3">TODO: titre de la deuxieme section</h2>
+                    <div class="content has-text-justified">
+                        TODO: texte.
+                    </div>
+                </div>
+            </div>
+            <!--/ Section 2 -->
+
+
+        </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@article{TODO,
+  title={OTRetarget: Joint Human and Multi-Object Kinematic Retargeting via Optimal Transport},
+  author={TODO},
+  journal={TODO},
+  year={2026}
+}</code></pre>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="my-last-section">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-8">
+                        <div class="content">
+                            <p>
+                                This website is licensed under a <a rel="license"
+                                    href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 Licence</a>.
+                                We thank <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> for creating
+                                the template of this webpage.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
