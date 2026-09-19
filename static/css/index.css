@@ -240,3 +240,21 @@ body {
 }
 
 /* To reduce the space between the first section and the abstract */
+/* ---- Adaptation a 8 auteurs (le CSS ci-dessus est calibre pour 4) ----
+   width 17% -> 5 par ligne, soit un desequilibre 5+3. A 24% on obtient
+   4 + 4, et Fabian Schramm ouvre la seconde ligne.
+   Le <a> n'etait style nulle part : en flex il se dimensionne a son
+   contenu et se cale a gauche de sa colonne, ce qui decalait chaque nom
+   d'une quantite differente selon sa longueur. On le fait remplir la
+   colonne, ce qui centre le nom et, plus tard, la photo (dont le
+   width:75% se resout alors sur la colonne). */
+.team-member {
+  width: 24%;
+  justify-content: center;
+}
+
+.team-member a {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
