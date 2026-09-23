@@ -48,7 +48,7 @@
     <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="./static/css/index.css?v=12">
+    <link rel="stylesheet" href="./static/css/index.css?v=13">
 
 </head>
 
@@ -269,11 +269,11 @@
                     between them. A single transport plan, baked once in a T-pose, carries those readings
                     onto the robot. A per-frame constrained program then arbitrates them against the
                     demonstrated style and solves the robot pose and every object pose in one go. The dashed
-                    stage is optional: it swaps the object for another one. The four clips below walk through
-                    it; click the figure for the full-size version.</figcaption>
+                    stage is optional: it swaps the object for another one. The clips below walk through it;
+                    click the figure for the full-size version.</figcaption>
             </figure>
 
-            <div class="video-grid">
+            <div class="video-grid is-three">
                 <figure>
                     <video autoplay muted loop playsinline preload="metadata">
                         <source src="./static/videos/capture.mp4" type="video/mp4">
@@ -296,16 +296,24 @@
                         solved once in a T-pose, carries those targets across morphologies. Every human
                         sample receives mass, so fingertips and heels are not left behind.</figcaption>
                 </figure>
-                <figure>
-                    <video autoplay muted loop playsinline preload="metadata">
-                        <source src="./static/videos/jointsolve.mp4" type="video/mp4">
-                    </video>
-                    <figcaption><b>Joint solve.</b> The robot pose and every object pose are solved together,
-                        so an object may move to stay reachable. Pinned to the demonstration, the box ends up
-                        above the robot's own head and it chases it off the floor; solved jointly, it stays
-                        within reach and the feet stay down.</figcaption>
-                </figure>
             </div>
+
+            <!-- The solve watched from the inside. Cut from
+                 HoloV3/demo_results/femto14/rushes_witness_solve/forme_vanilla.mp4 (--witness-solve, four
+                 families), 70% speed, cropped to 1450x950 at (250,130) of the 1920x1080 rush. -->
+            <figure class="proof witness">
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/witness_solve.mp4" type="video/mp4">
+                </video>
+                <figcaption><b>The solve, from the inside.</b> The same pick-and-place, with the residuals
+                    the program is minimising drawn on top of it. Each segment joins a control point to its
+                    witness on the other surface: <b>yellow</b> for the target field carried over by
+                    transport, <b>blue</b> for that same field re-evaluated at the pose the solver returns.
+                    Feet against the floor, hands onto the box, the box onto the floor and then onto the
+                    tabletop. The objects are drawn as the point clouds the residuals are written on, and
+                    only the active points are shown — some five hundred at a time out of 5302 — which is
+                    what makes the picture, and the solve, tractable.</figcaption>
+            </figure>
         </div>
     </section>
     <!--/ HOW IT WORKS -->
@@ -336,6 +344,16 @@
                     trajectories are drawn as their methods produced them, each shifted by a constant
                     horizontal offset so the panels share one patch of floor — heights are untouched.
                 </figcaption>
+            </figure>
+
+            <figure class="proof">
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/jointsolve.mp4" type="video/mp4">
+                </video>
+                <figcaption><b>The object is a decision, not an input.</b> The robot pose and every object
+                    pose are solved together, so an object may move to stay reachable. Pinned to the
+                    demonstration, the box ends up above the robot's own head and it chases it off the floor;
+                    solved jointly, it stays within reach and the feet stay down.</figcaption>
             </figure>
 
         </div>

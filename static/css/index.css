@@ -380,6 +380,15 @@ body {
   gap: 1.6rem 1.4rem;
 }
 
+/* Three across: the inputs and the transfer, before the full-width solve clip. */
+.video-grid.is-three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.video-grid.is-three figcaption {
+  text-align: left;
+}
+
 .video-grid figure {
   margin: 0;
 }
@@ -424,8 +433,15 @@ body {
   color: #4a4a4a;
 }
 
+/* The solve clip closes the section, so it needs air after the row of tiles. */
+.proof.witness {
+  margin-top: 2.2rem;
+}
+
+/* .is-three must be named here too: it outranks a bare .video-grid rule. */
 @media screen and (max-width: 768px) {
-  .video-grid {
+  .video-grid,
+  .video-grid.is-three {
     grid-template-columns: 1fr;
   }
 }
