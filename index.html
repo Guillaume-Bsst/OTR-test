@@ -379,11 +379,20 @@
                 <video autoplay muted loop playsinline preload="metadata">
                     <source src="./static/videos/pnp_s2r.mp4" type="video/mp4">
                 </video>
-                <figcaption><b>Pick-and-place, two objects.</b> The retargeted reference, and the robot
-                    trained on it. In the reference, the box leaves its demonstrated path to stay within
-                    reach, then returns to the demonstrated pose with its underside on the tabletop. On the
-                    real G1 the policy completes six of eight trials, with no object perception and no
+                <figcaption><b>Pick-and-place, two objects.</b> Left, the kinematic reference our solver
+                    returns: the box leaves its demonstrated path to stay within reach, then comes back to
+                    the demonstrated pose with its underside on the tabletop. Right, the robot trained to
+                    track that reference, completing six of eight trials with no object perception and no
                     retraining.</figcaption>
+            </figure>
+
+            <figure class="proof">
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="./static/videos/isaac_pnp.mp4" type="video/mp4">
+                </video>
+                <figcaption><b>In between: the policy learning the task under physics.</b> The scene runs in
+                    many parallel instances, each tracking the same reference, with contacts and dynamics
+                    resolved. What the robot above executes is what comes out of this.</figcaption>
             </figure>
 
             <figure class="proof">
@@ -391,8 +400,8 @@
                     <source src="./static/videos/hardware.mp4" type="video/mp4">
                 </video>
                 <figcaption><b>Locomotion.</b> Tracking policies trained on OTRetarget references and deployed
-                    on the same robot — <i>spin</i>, <i>crawl</i> and <i>cha-cha</i> — each shown next to its
-                    simulated reference.</figcaption>
+                    on the same robot — <i>spin</i>, <i>crawl</i> and <i>cha-cha</i> — each shown next to the
+                    reference it tracks.</figcaption>
             </figure>
         </div>
     </section>
