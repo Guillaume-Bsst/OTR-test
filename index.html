@@ -209,9 +209,9 @@
                 <source src="./static/videos/pnp.mp4" type="video/mp4">
             </video>
             <h2 class="subtitle has-text-centered">
-                A whole-body policy trained on an <b>OTRetarget</b> reference, running on a Unitree G1 with no
-                object perception and no retraining: the box is picked off the floor and placed on the table.
-                Inset: the human demonstration it was retargeted from.
+                A Unitree G1 picks the box off the floor and places it on the table. The whole-body policy
+                was trained on an <b>OTRetarget</b> reference and runs with no object perception and no
+                retraining. Inset, the human demonstration it started from.
             </h2>
         </div>
     </section>
@@ -271,8 +271,8 @@
                     between them. A single transport plan, baked once in a T-pose, carries those readings
                     onto the robot. A per-frame constrained program then arbitrates them against the
                     demonstrated style and solves the robot pose and every object pose in one go. The dashed
-                    stage is optional: it swaps the object for another one. The clips below walk through it;
-                    click the figure for the full-size version.</figcaption>
+                    stage is optional: it swaps the object for another one. The clips below walk through it.
+                    Click the figure for the full-size version.</figcaption>
             </figure>
 
             <div class="video-grid">
@@ -325,10 +325,10 @@
                 <video autoplay muted loop playsinline preload="metadata">
                     <source src="./static/videos/floorlamp_v2.mp4" type="video/mp4">
                 </video>
-                <figcaption><b>The baseline never closes a hand on the pole.</b> Same sequence, same world,
-                    same object. Ours grips the shaft with both hands and holds through the reach;
-                    OmniRetarget leaves the hand open in the air beside it and recovers none of the
-                    demonstrated contact.</figcaption>
+                <figcaption><b>The baseline never closes a hand on the pole.</b> Same sequence, same world.
+                    Ours grips the shaft with both hands and holds it through the reach. OmniRetarget leaves
+                    the hand open in the air beside the shaft. It recovers none of the demonstrated contact.
+                </figcaption>
             </figure>
 
             <figure class="proof">
@@ -336,12 +336,12 @@
                     <source src="./static/videos/crawl.mp4" type="video/mp4">
                 </video>
                 <figcaption><b>Hands and knees on the floor.</b> One fixed camera for all four panels.
-                    OTRetarget lays both hands flat on the ground as the demonstration does; OmniRetarget
-                    reaches it with the wrist bent; GMR, which represents no terrain, leaves the lead hand
-                    hovering; PHC drives the forearm and the supporting foot through the floor. The four
-                    trajectories are drawn as their methods produced them, each shifted by a constant
-                    horizontal offset so the panels share one patch of floor — heights are untouched.
-                </figcaption>
+                    OTRetarget lays both hands flat on the ground, as the demonstration does. OmniRetarget
+                    reaches the ground with the wrist bent. GMR represents no terrain and leaves the lead
+                    hand hovering. PHC drives the forearm and the supporting foot through the floor. Each
+                    trajectory is drawn as its method produced it, ours also smoothed for display. Each is
+                    then shifted by a constant horizontal offset, so the panels share one patch of floor.
+                    Heights are untouched.</figcaption>
             </figure>
 
             <figure class="proof">
@@ -350,8 +350,8 @@
                 </video>
                 <figcaption><b>The object is a decision, not an input.</b> The robot pose and every object
                     pose are solved together, so an object may move to stay reachable. Pinned to the
-                    demonstration, the box ends up above the robot's own head and it chases it off the floor;
-                    solved jointly, it stays within reach and the feet stay down.</figcaption>
+                    demonstration, the box ends up above the robot's own head and the robot chases it off
+                    the floor. Solved jointly, it stays within reach and the feet stay down.</figcaption>
             </figure>
 
         </div>
@@ -370,8 +370,8 @@
             <div class="content has-text-justified">
                 The same demonstration is replayed onto unseen shapes, from a ball to a beam, by transporting
                 the demonstrated witness points onto the substitute surface. The grip holds on shapes the
-                capture never touched, and the object leaves its demonstrated path by exactly what it takes
-                for the hands to meet the new geometry — an adaptation a replayed trajectory cannot make.
+                capture never touched. The object leaves its demonstrated path by exactly what it takes for
+                the hands to meet the new geometry, which a replayed trajectory cannot do.
             </div>
         </div>
     </section>
@@ -387,7 +387,7 @@
                     <source src="./static/videos/pnp_kin_sim.mp4" type="video/mp4">
                 </video>
                 <figcaption><b>From the solve to the policy.</b> Left, the kinematic reference our solver
-                    returns: the box leaves its demonstrated path to stay within reach, then comes back to
+                    returns. The box leaves its demonstrated path to stay within reach, then comes back to
                     the demonstrated pose with its underside on the tabletop. Right, the policy learning to
                     track that reference in a simulator, many instances of the scene at once.</figcaption>
             </figure>
@@ -405,9 +405,9 @@
                 <video autoplay muted loop playsinline preload="metadata">
                     <source src="./static/videos/hardware.mp4" type="video/mp4">
                 </video>
-                <figcaption><b>Locomotion.</b> Tracking policies trained on OTRetarget references and deployed
-                    on the same robot — <i>spin</i>, <i>crawl</i> and <i>cha-cha</i> — each shown next to the
-                    reference it tracks.</figcaption>
+                <figcaption><b>Locomotion.</b> Tracking policies trained on OTRetarget references and
+                    deployed on the same robot: <i>spin</i>, <i>crawl</i> and <i>cha-cha</i>. Each is shown
+                    next to the reference it tracks.</figcaption>
             </figure>
         </div>
     </section>
