@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Preview clips — OTRetarget</title>
+    <style>
+        :root {
+            --ink: #1c1c1c;
+            --soft: #5d5d5d;
+            --line: #e2e2e2;
+            --accent: #2d6fd4;
+            --warn: #8a5a00;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 2.2rem 16px 5rem;
+            font: 16px/1.55 'Noto Sans', system-ui, -apple-system, sans-serif;
+            color: var(--ink);
+            background: #fff;
+            max-width: 1000px;
+            margin-inline: auto;
+        }
+
+        h1 { font-size: 1.5rem; margin: 0 0 .3rem; }
+
+        .lede { color: var(--soft); margin: 0 0 2.4rem; }
+
+        section { border-top: 1px solid var(--line); padding-top: 1.6rem; margin-top: 2.4rem; }
+
+        h2 { font-size: 1.15rem; margin: 0 0 .2rem; }
+
+        .where { color: var(--soft); font-size: .86rem; margin: 0 0 1rem; }
+
+        video { width: 100%; display: block; border-radius: 6px; background: #000; }
+
+        .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+
+        .tilewidth { max-width: 470px; }
+
+        figcaption {
+            font-size: .88rem;
+            color: var(--soft);
+            margin-top: .5rem;
+        }
+
+        .claim { border-left: 3px solid var(--accent); padding-left: .8rem; margin: 1rem 0; }
+
+        .measure {
+            font-size: .88rem;
+            background: #f7f8fa;
+            border-radius: 6px;
+            padding: .7rem .9rem;
+            margin-top: .9rem;
+        }
+
+        .measure b { font-variant-numeric: tabular-nums; }
+
+        .flag {
+            font-size: .88rem;
+            border-left: 3px solid var(--warn);
+            padding-left: .8rem;
+            margin-top: .9rem;
+            color: var(--warn);
+        }
+
+        .q { font-weight: 600; margin-top: 1rem; }
+
+        figure { margin: 0; }
+
+        @media (max-width: 760px) { .pair { grid-template-columns: 1fr; } }
+    </style>
+</head>
+
+<body>
+    <h1>Preview — les deux clips produits</h1>
+    <p class="lede">Page de travail, séparée du site. <code>index.html</code> n'a pas été touché.
+        Les clips sont encodés exactement comme ils le seraient sur la page (largeur 960, crf 28, muets).</p>
+
+    <section>
+        <h2>1. Objet figé contre objet résolu conjointement</h2>
+        <p class="where">Irait dans « How it works », 4<sup>e</sup> case, à la place de <code>solver.mp4</code>.
+            Même emplacement, page inchangée en longueur. Séquence <code>largebox</code>, OMOMO sub3_003.</p>
+
+        <video autoplay muted loop playsinline controls>
+            <source src="./static/videos/jointsolve_ab.mp4" type="video/mp4">
+        </video>
+
+        <div class="measure">
+            Un seul flag sépare les deux runs ; les <code>qpos</code> sont identiques jusqu'à la frame 19, donc
+            l'A/B est contrôlé. Boîte au sommet : <b>1,54 m</b> figée contre <b>1,28 m</b> résolue, soit
+            <b>26 cm</b> plus bas. Déplacement moyen de l'objet <b>12,2 cm</b>. Pieds décollés :
+            <b>34 frames sur 202</b> côté figé (jusqu'à 64 mm), <b>0 frame</b> chez nous.
+        </div>
+
+        <p class="q">Ce que je te demande de juger : à la taille d'une case de la grille 2×2, chaque panneau
+            fera environ 240 px. Est-ce que la différence se lit encore ?</p>
+        <figure class="tilewidth">
+            <video autoplay muted loop playsinline>
+                <source src="./static/videos/jointsolve_ab.mp4" type="video/mp4">
+            </video>
+            <figcaption>Le même clip à la largeur réelle qu'il aura dans la grille.</figcaption>
+        </figure>
+    </section>
+
+    <section>
+        <h2>2. OmniRetarget ne referme jamais les mains sur la tige</h2>
+        <p class="where">Irait en pleine largeur en tête de « Results », au-dessus des tuiles chiffrées.
+            Séquence <code>floorlamp</code>, OMOMO sub10_031.</p>
+
+        <div class="claim">Mesuré : OmniRetarget n'amène <b>jamais</b> un poignet à moins de 110 mm de la lampe
+            — 0 frame sur 102, médiane 141 mm. Nous : les deux poignets sous 110 mm pendant 54 frames
+            consécutives, au plus près 68 mm.</div>
+
+        <div class="pair">
+            <figure>
+                <video autoplay muted loop playsinline controls>
+                    <source src="./static/videos/floorlamp_ab.mp4" type="video/mp4">
+                </video>
+                <figcaption><b>Version complète</b> — 3,4 s. Le dernier tiers montre les deux robots après
+                    le lâcher, bras ballants : en boucle, environ une seconde où le clip ne prouve rien.</figcaption>
+            </figure>
+            <figure>
+                <video autoplay muted loop playsinline controls>
+                    <source src="./static/videos/floorlamp_ab_trim.mp4" type="video/mp4">
+                </video>
+                <figcaption><b>Coupée à la prise</b> — 2,3 s, frames 0 à 70. Ne montre que la fenêtre où la
+                    question de la saisie se pose. C'est celle que je retiendrais.</figcaption>
+            </figure>
+        </div>
+
+        <div class="flag">
+            Trois réserves relevées à la production, à intégrer dans la légende finale :
+            la séquence ne contient <b>aucun levé</b> (la lampe est inclinée sur son pied, jamais soulevée) ;
+            la lampe côté Omni <b>flotte 25,6 mm au-dessus du sol</b> sur tout le clip, donc « même trajectoire
+            d'objet » serait inexact ; et le clip rend la ligne <i>scaled, obj. fixed</i> de la Table I
+            (dd 9,4 / dw 38), pas la ligne native (9,3 / 37).
+        </div>
+    </section>
+
+    <section>
+        <h2>Ce qui n'a pas été tourné</h2>
+        <p><b>Le 4-voies <code>crawl</code></b> — tenté deux fois, illisible à la largeur web : chaque tuile suit
+            son propre bassin, donc les panneaux ne se superposent pas et le contact main-sol tombe sur la ligne
+            d'horizon à quelques pixels. À remplacer par l'image <code>crawl.png</code> du papier, déjà faite.</p>
+        <p><b>Le pick-and-place contre baselines</b> — impossible, et c'est une bonne nouvelle : les fichiers
+            d'Omni, GMR et PHC portent <code>meta_obj='none'</code>, ni boîte ni table. Aucune baseline ne peut
+            exprimer la scène. C'est la thèse du papier ; elle se dit en mots, elle ne se montre pas.</p>
+    </section>
+</body>
+
+</html>

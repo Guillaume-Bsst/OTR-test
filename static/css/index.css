@@ -427,10 +427,12 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+/* The widths in the HTML are already scaled: the worse of the two values gets
+   55% and the other its true share of it, so the bars read as the real ratio.
+   No max-width here, it would clip the long bar and flatter nobody. */
 .metric .bar {
   height: 9px;
   border-radius: 5px;
-  max-width: 55%;
 }
 
 .metric .bar.ours {
