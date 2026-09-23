@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HT3ZT6PP2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -16,14 +15,10 @@
         gtag('config', 'G-5HT3ZT6PP2');
     </script>
 
-    <!-- Open Graph = the preview shown when the link is shared (X, Slack, LinkedIn). -->
     <meta property="og:site_name" content="Simple Robotics" />
     <meta property="og:title" content="OTRetarget: Joint Robot and Object Motion Retargeting via Optimal Transport" />
     <meta property="og:description"
         content="Jointly retargeting robot and multi-object motion from human demonstrations, using entropic optimal transport to transfer surface interactions." />
-    <!-- Frozen 24/09, lowercase on both sides: main.tex's \blfootnote points here. Case matters,
-         GitHub Pages serves paths case-sensitively, and eleven of the lab's twelve published pages
-         are lowercase with hyphens. -->
     <meta property="og:url" content="https://simple-robotics.github.io/publications/otretarget/" />
     <meta property="og:image" content="./static/images/teaser.png" />
     <meta property="og:type" content="article" />
@@ -37,27 +32,17 @@
     <meta property="article:author" content="https://ymontmarin.github.io/" />
     <meta property="article:author" content="https://www.ajaysathya.com" />
     <meta property="article:author" content="https://www.linkedin.com/in/guillaume-besset/" />
-    <!-- TODO: one article:author line per author who has a personal page -->
 
     <link rel="icon" type="image/png" sizes="512x512" href="./static/images/favicon.png">
-
-    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
     <script defer src="./static/js/fontawesome.all.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <link rel="stylesheet" href="./static/css/bulma.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="./static/css/index.css?v=16">
+    <link rel="stylesheet" href="./static/css/index.css?v=17">
 
 </head>
 
-
-
 <body>
-    <!-- Navigation bar at the top -->
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -74,26 +59,10 @@
                     </span>
                 </a>
 
-                <!-- TODO: "More Research" menu pointing to related pages.
-                     Uncomment and replace the entries; an empty menu renders as a
-                     grey box, so leave it commented out as long as it is empty.
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        More Research
-                    </a>
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item" href="TODO">
-                            TODO: title of the linked page
-                        </a>
-                    </div>
-                </div>
-                -->
             </div>
         </div>
     </nav>
 
-
-    <!-- TITLE -->
     <section class="hero">
         <div class="my-first-section">
             <div class="hero-body">
@@ -106,7 +75,6 @@
 
                             <div class="column has-text-centered">
                                 <div class="publication-links">
-                                    <!-- TODO: replace XXXX.XXXXX with the arXiv ID once submitted -->
                                     <span class="link-block">
                                         <a href="https://arxiv.org/abs/XXXX.XXXXX"
                                             class="external-link button is-normal is-rounded is-dark">
@@ -116,8 +84,6 @@
                                             <span>arXiv</span>
                                         </a>
                                     </span>
-                                    <!-- TODO: once the repository is public, restore an href and drop
-                                         the code-soon class (the tooltip goes away with it) -->
                                     <span class="link-block">
                                         <a class="external-link button is-normal is-rounded is-dark code-soon"
                                             aria-label="Code coming soon">
@@ -130,8 +96,6 @@
                                 </div>
                             </div>
 
-                            <!-- Photos: static/images/authors/, square 400x400.
-                                 The <a> with no href are the authors with no known personal page. -->
                             <div class="team-container">
                                 <div class="team-member">
                                     <a href="https://www.linkedin.com/in/guillaume-besset/" target="_blank">
@@ -202,7 +166,6 @@
         </div>
     </section>
 
-    <!-- TEASER -->
     <section class="hero teaser">
         <div class="container is-max-desktop">
             <video autoplay muted loop playsinline controls preload="metadata">
@@ -215,11 +178,9 @@
             </h2>
         </div>
     </section>
-    <!--/ TEASER -->
 
     <section class="section">
         <div class="container is-max-desktop">
-            <!-- Abstract. -->
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
                     <h2 class="title is-3">Abstract</h2>
@@ -245,21 +206,14 @@
                     </div>
                 </div>
             </div>
-            <!--/ Abstract. -->
 
         </div>
     </section>
 
-    <!-- HOW IT WORKS -->
     <section class="section">
         <div class="container is-max-desktop">
             <h2 class="title is-3 has-text-centered">How it works</h2>
 
-            <!-- Pipeline: figure 2 of the ICRA submission, build 11 of 23/09, page 2 at 300 dpi,
-                 trimmed to the figure alone. That PDF is the reference. Careful: the PaperV4.4
-                 build sitting in the repo is older and writes the proximity subscripts p,c where
-                 the submission writes c,p, so the figure must be cut from the submission, never
-                 from whatever main.pdf happens to be lying around. -->
             <figure class="pipeline">
                 <a href="./static/images/pipeline-icra-v11.jpg" title="Full size">
                     <img src="./static/images/pipeline-icra-v11.jpg"
@@ -298,10 +252,6 @@
                         solved once in a T-pose, carries those targets across morphologies. Every human
                         sample receives mass, so fingertips and heels are not left behind.</figcaption>
                 </figure>
-                <!-- The solve watched from the inside. Cut from
-                     HoloV3/demo_results/femto14/rushes_witness_solve/forme_vanilla.mp4 (--witness-solve,
-                     four families), 70% speed, cropped 16:9 to 1737x977 at (183,103) of the 1920x1080
-                     rush so the tile matches the other three exactly. -->
                 <figure class="witness">
                     <video autoplay muted loop playsinline preload="metadata">
                         <source src="./static/videos/witness_solve.mp4" type="video/mp4">
@@ -314,9 +264,7 @@
             </div>
         </div>
     </section>
-    <!--/ HOW IT WORKS -->
 
-    <!-- RESULTS -->
     <section class="section">
         <div class="container is-max-desktop">
             <h2 class="title is-3 has-text-centered">Results</h2>
@@ -358,9 +306,7 @@
 
         </div>
     </section>
-    <!--/ RESULTS -->
 
-    <!-- OBJECT GENERALIZATION -->
     <section class="section">
         <div class="container is-max-desktop">
             <h2 class="title is-3 has-text-centered">One demonstration, a distribution of objects</h2>
@@ -377,9 +323,7 @@
             </div>
         </div>
     </section>
-    <!--/ OBJECT GENERALIZATION -->
 
-    <!-- SIM-TO-REAL -->
     <section class="section">
         <div class="container is-max-desktop">
             <h2 class="title is-3 has-text-centered">Sim-to-real</h2>
@@ -414,16 +358,10 @@
             </figure>
         </div>
     </section>
-    <!--/ SIM-TO-REAL -->
 
-    <!-- BIBTEX -->
     <section class="section" id="BibTeX">
         <div class="container is-max-desktop content">
             <h2 class="title is-3">BibTeX</h2>
-            <!-- Preprint form, the one arXiv itself exports. The identifier is a placeholder and lives
-                 in three spots: eprint, url, and the arXiv button at the top of the page. Once the paper
-                 is accepted, this becomes an @inproceedings with booktitle and pages, and the eprint
-                 fields stay so the preprint keeps resolving. -->
             <pre><code>@misc{besset2026otretarget,
   title         = {{OTRetarget}: Joint Robot and Object Motion Retargeting via Optimal Transport},
   author        = {Besset, Guillaume and Carn, Erwann and Carecchio, Timoth\'ee and
@@ -437,7 +375,6 @@
 }</code></pre>
         </div>
     </section>
-    <!--/ BIBTEX -->
 
     <footer class="footer">
         <div class="my-last-section">

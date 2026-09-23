@@ -2,235 +2,62 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
-
-.footer .icon-link {
-  font-size: 25px;
-  color: #000;
-}
-
 .link-block a {
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-.dnerf {
-  font-variant: small-caps;
-}
-
-
-.teaser .hero-body {
-  padding-top: 0;
-  padding-bottom: 3rem;
-}
-
 .teaser {
   font-family: 'Google Sans', sans-serif;
+  padding: 0 0 1.5rem 0;
 }
-
-
-.publication-title {}
-
-.publication-banner {
-  max-height: parent;
-
-}
-
-.publication-banner video {
-  position: relative;
-  left: auto;
-  top: auto;
-  transform: none;
-  object-fit: fit;
-}
-
-.publication-header .hero-body {}
 
 .publication-title {
   font-family: 'Google Sans', sans-serif;
-}
-
-.publication-authors {
-  font-family: 'Google Sans', sans-serif;
-}
-
-.publication-venue {
-  color: #555;
-  width: fit-content;
-  font-weight: bold;
-}
-
-.publication-awards {
-  color: #ff3860;
-  width: fit-content;
-  font-weight: bolder;
-}
-
-.publication-authors a {
-  color: hsl(204, 86%, 53%) !important;
-}
-
-.publication-authors a:hover {
-  text-decoration: underline;
 }
 
 .author-block {
   display: inline-block;
 }
 
-.publication-banner img {}
-
-.publication-authors {
-  /*color: #4286f4;*/
-}
-
-.publication-video {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
-
-  overflow: hidden;
-  border-radius: 10px !important;
-}
-
-.publication-video iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.publication-body img {}
-
-.results-carousel {
-  overflow: hidden;
-}
-
-.results-carousel .item {
-  margin: 5px;
-  overflow: hidden;
-  border: 1px solid #bbb;
-  border-radius: 10px;
-  padding: 0;
-  font-size: 0;
-}
-
-.results-carousel video {
-  margin: 0;
-}
-
-/* Three image containers (use 25% for four, and 50% for two, etc) */
-.results-column {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
-}
-
-/* Clear floats after image containers */
-.results-row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-
-.interpolation-panel {
-  background: #f5f5f5;
-  border-radius: 10px;
-}
-
-.interpolation-panel .interpolation-image {
-  width: 100%;
-  border-radius: 5px;
-}
-
-.interpolation-video-column {}
-
-.interpolation-panel .slider {
-  margin: 0 !important;
-}
-
-.interpolation-panel .slider {
-  margin: 0 !important;
-}
-
-#interpolation-image-wrapper {
-  width: 100%;
-}
-
-#interpolation-image-wrapper img {
-  border-radius: 5px;
-}
-
-
-
-
 .team-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0px;
-  margin-right: 5%;
-  margin-left: 5%;
+  gap: 6px 6px;
+  margin-right: auto;
+  margin-left: auto;
   margin-top: 15px;
   margin-bottom: 10px;
   color: #1403ac;
   font-weight: bold;
+  max-width: 1080px;
+  align-items: flex-start;
 }
 
 .team-member {
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
-  /* width: 160px; */
-  width: 17%;
-  font-size: 18px;
+  width: 128px;
+  font-size: 15px;
+  justify-content: center;
 }
 
 .team-member img {
-  /* width: 130px; */
-  /* height: 130px; */
-  /* width: 130px; */
-  width: 75%;
+  width: 90px;
   aspect-ratio: 1/1;
-  /* height: 130px; */
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 10px;
   border: 3px solid #aeaeae;
   transition: transform 0.3s ease;
+  max-width: 90px;
 }
 
 .team-member img:hover {
   transform: scale(1.10);
 }
 
-/*
-.member-name {
-  text-align: center;
-  font-weight: normal;
-  font-family: "Source Serif 4", serif;
-  font-size: 1.2vw;
-  color: #1403ac;
-}
-
-.member-name a {
-  text-decoration: none;
-  color: #7c2320;
-}
-
-.member-name a:hover {
-  color: red;
-  text-decoration: underline;
-  transform: translateY(-2px);
-  transition: transform 0.3s ease;
-}
-*/
-
-/* .hero:first-of-type .hero-body { */
-/* padding-bottom: 0rem; */
-/* } */
 .my-first-section {
   margin-bottom: -3rem;
 }
@@ -239,50 +66,12 @@ body {
   margin-bottom: -10rem;
 }
 
-/* To reduce the space between the first section and the abstract */
-/* ---- Adapted to 8 authors (the CSS above is calibrated for 4) ----
-   width 17% -> 5 per row, i.e. an unbalanced 5+3. At 24% we get
-   4 + 4, and Fabian Schramm opens the second row.
-   The <a> was not styled anywhere: in flex it sizes to its own content
-   and sits at the left of its column, which shifted every name by a
-   different amount depending on its length. We make it fill the
-   column, which centres the name and, later, the photo (whose
-   width:75% then resolves against the column). */
-.team-container {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1080px;
-  gap: 6px 6px;
-  /* without this each column centres its own content and the photos shift
-     vertically as soon as one name takes an extra line */
-  align-items: flex-start;
-}
-
-.team-member {
-  width: 128px;
-  justify-content: center;
-  font-size: 15px;
-}
-
 .team-member a {
   display: block;
   width: 100%;
   text-align: center;
 }
 
-/* The photo is 75% of its column in the original CSS; widening the columns
-   to 24% therefore enlarged the thumbnails by as much. We decouple the two:
-   the column stays wide (for the 4+4), the thumbnail is capped outright.
-   max-width is THE number to tune if they ever need to change again. */
-.team-member img {
-  width: 90px;
-  max-width: 90px;
-}
-
-/* Tooltip on hover over the Code button, while the repository is not public.
-   Removing the code-soon class in index.html makes it disappear. */
-/* Bulma's .button.is-dark carries two classes: at least as much specificity
-   is needed to grey it out, hence .button.code-soon and not .code-soon alone. */
 .button.code-soon,
 .button.code-soon:hover,
 .button.code-soon:focus,
@@ -334,13 +123,6 @@ body {
   opacity: 1;
 }
 
-/* ---- Teaser, clip grid and result tiles ----
-   The two-colour scale is blue against neutral grey: it survives greyscale
-   print and does not rely on hue alone to carry the comparison. */
-.teaser {
-  padding: 0 0 1.5rem 0;
-}
-
 .teaser video {
   width: 100%;
   display: block;
@@ -353,9 +135,6 @@ body {
   margin-top: 0.9rem;
 }
 
-/* Pipeline figure: the map the four tiles below are read against. It comes from
-   the paper, so it carries small type; the anchor gives the full-size file to
-   anyone who wants to read the formulas. */
 .pipeline {
   margin: 0 0 2rem;
 }
@@ -374,8 +153,6 @@ body {
   color: #4a4a4a;
 }
 
-/* Every cell the same box, caption included: the rows share one height, so a
-   long caption grows all four cells rather than staggering them. */
 .video-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -383,14 +160,10 @@ body {
   gap: 1.6rem 1.4rem;
 }
 
-
 .video-grid figure {
   margin: 0;
 }
 
-/* The four tiles must line up, so the box is fixed at 16:9 whatever the clip's
-   own ratio is; `contain` letterboxes rather than crops, so a clip that does
-   not match loses framing, never content. */
 .video-grid video {
   width: 100%;
   display: block;
@@ -408,7 +181,6 @@ body {
   color: #4a4a4a;
 }
 
-/* Full-width proof clip: the picture that a claim in the text stands on. */
 .proof {
   margin: 0 0 1.8rem;
 }
