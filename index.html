@@ -407,7 +407,7 @@
             var clips = [].slice.call(document.querySelectorAll('video'));
 
             function box(v) { return v.closest('figure') || v.parentNode; }
-            function mark(v) { box(v).classList.toggle('is-paused', v.paused); }
+            function mark(v) { box(v).classList.toggle('is-paused', v.paused && !v.hasAttribute('controls')); }
 
             clips.forEach(function (v) {
                 v.dataset.play = still ? '0' : '1';
@@ -415,14 +415,11 @@
 
                 if (survol) {
                     v.removeAttribute('controls');
-                    v.addEventListener('mouseenter', function () { v.setAttribute('controls', ''); });
-                    v.addEventListener('mouseleave', function () { v.removeAttribute('controls'); });
+                    ['mouseenter', 'click'].forEach(function (e) {
+                        v.addEventListener(e, function () { v.setAttribute('controls', ''); mark(v); });
+                    });
+                    v.addEventListener('mouseleave', function () { v.removeAttribute('controls'); mark(v); });
                 }
-
-                v.addEventListener('click', function () {
-                    if (v.hasAttribute('controls')) { return; }
-                    if (v.paused) { v.play().catch(function () {}); } else { v.pause(); }
-                });
 
                 v.addEventListener('play', function () { v.dataset.play = '1'; mark(v); });
                 v.addEventListener('pause', function () {
