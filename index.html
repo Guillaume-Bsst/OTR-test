@@ -377,13 +377,13 @@
 
             <figure class="proof">
                 <video autoplay muted loop playsinline preload="metadata">
-                    <source src="./static/videos/pnp_sim.mp4" type="video/mp4">
+                    <source src="./static/videos/pnp_s2r.mp4" type="video/mp4">
                 </video>
-                <figcaption><b>Pick-and-place, two objects.</b> The reference a policy is trained on: the box
-                    leaves its demonstrated path to stay within the robot's reach, then comes back to the
-                    demonstrated pose with its underside on the tabletop. On the real G1, the policy trained
-                    on it alone completes six of eight trials, with no object perception and no retraining
-                    (top of this page).</figcaption>
+                <figcaption><b>Pick-and-place, two objects.</b> The retargeted reference, and the robot
+                    trained on it. In the reference, the box leaves its demonstrated path to stay within
+                    reach, then returns to the demonstrated pose with its underside on the tabletop. On the
+                    real G1 the policy completes six of eight trials, with no object perception and no
+                    retraining.</figcaption>
             </figure>
 
             <figure class="proof">
