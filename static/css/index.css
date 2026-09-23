@@ -240,21 +240,21 @@ body {
 }
 
 /* To reduce the space between the first section and the abstract */
-/* ---- Adaptation a 8 auteurs (le CSS ci-dessus est calibre pour 4) ----
-   width 17% -> 5 par ligne, soit un desequilibre 5+3. A 24% on obtient
-   4 + 4, et Fabian Schramm ouvre la seconde ligne.
-   Le <a> n'etait style nulle part : en flex il se dimensionne a son
-   contenu et se cale a gauche de sa colonne, ce qui decalait chaque nom
-   d'une quantite differente selon sa longueur. On le fait remplir la
-   colonne, ce qui centre le nom et, plus tard, la photo (dont le
-   width:75% se resout alors sur la colonne). */
+/* ---- Adapted to 8 authors (the CSS above is calibrated for 4) ----
+   width 17% -> 5 per row, i.e. an unbalanced 5+3. At 24% we get
+   4 + 4, and Fabian Schramm opens the second row.
+   The <a> was not styled anywhere: in flex it sizes to its own content
+   and sits at the left of its column, which shifted every name by a
+   different amount depending on its length. We make it fill the
+   column, which centres the name and, later, the photo (whose
+   width:75% then resolves against the column). */
 .team-container {
   margin-left: auto;
   margin-right: auto;
   max-width: 1080px;
   gap: 6px 6px;
-  /* sans quoi chaque colonne centre son contenu et les photos se decalent
-     verticalement des qu'un nom prend une ligne de plus */
+  /* without this each column centres its own content and the photos shift
+     vertically as soon as one name takes an extra line */
   align-items: flex-start;
 }
 
@@ -270,19 +270,19 @@ body {
   text-align: center;
 }
 
-/* La photo fait 75% de sa colonne dans le CSS d'origine ; en elargissant les
-   colonnes a 24% on grossissait donc les vignettes d'autant. On decouple :
-   la colonne reste large (pour le 4+4), la vignette est bornee en dur.
-   max-width est LE chiffre a regler si elles doivent encore changer. */
+/* The photo is 75% of its column in the original CSS; widening the columns
+   to 24% therefore enlarged the thumbnails by as much. We decouple the two:
+   the column stays wide (for the 4+4), the thumbnail is capped outright.
+   max-width is THE number to tune if they ever need to change again. */
 .team-member img {
   width: 90px;
   max-width: 90px;
 }
 
-/* Bulle au survol du bouton Code, tant que le depot n'est pas publie.
-   Retirer la classe code-soon dans index.html la fait disparaitre. */
-/* .button.is-dark de Bulma a deux classes : il faut au moins autant de
-   specificite pour le griser, d'ou .button.code-soon et pas .code-soon seul. */
+/* Tooltip on hover over the Code button, while the repository is not public.
+   Removing the code-soon class in index.html makes it disappear. */
+/* Bulma's .button.is-dark carries two classes: at least as much specificity
+   is needed to grey it out, hence .button.code-soon and not .code-soon alone. */
 .button.code-soon,
 .button.code-soon:hover,
 .button.code-soon:focus,
@@ -332,4 +332,118 @@ body {
 .code-soon:hover::after,
 .code-soon:hover::before {
   opacity: 1;
+}
+
+/* ---- Teaser, clip grid and result tiles ----
+   The two-colour scale is blue against neutral grey, never green/red:
+   it stays readable for a deuteranope reader and in greyscale print. */
+.teaser {
+  padding: 0 0 1.5rem 0;
+}
+
+.teaser video {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.teaser .subtitle {
+  font-size: 1rem;
+  color: #4a4a4a;
+  margin-top: 0.9rem;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem 1.4rem;
+}
+
+.video-grid figure {
+  margin: 0;
+}
+
+.video-grid video {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+  background: #000;
+}
+
+.video-grid figcaption {
+  font-size: 0.92rem;
+  line-height: 1.45;
+  text-align: justify;
+  margin-top: 0.55rem;
+  color: #4a4a4a;
+}
+
+.result-lede {
+  color: #4a4a4a;
+  margin-bottom: 1.6rem;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem;
+}
+
+.metric {
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  padding: 0.9rem 1rem 1rem;
+}
+
+.metric-label {
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+
+.metric-hint {
+  font-size: 0.8rem;
+  color: #8a8a8a;
+  margin-bottom: 0.7rem;
+}
+
+/* Each row is: label | proportional bar | value. The bar's inline width is the
+   share of the worse of the two numbers, so the two rows are comparable. */
+.metric .row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.86rem;
+  margin-top: 0.3rem;
+}
+
+.metric .row span {
+  width: 3.4rem;
+  color: #6a6a6a;
+  flex: none;
+}
+
+.metric .row b {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+}
+
+.metric .bar {
+  height: 9px;
+  border-radius: 5px;
+  max-width: 55%;
+}
+
+.metric .bar.ours {
+  background: #2d6fd4;
+}
+
+.metric .bar.base {
+  background: #c2c2c2;
+}
+
+@media screen and (max-width: 768px) {
+  .video-grid,
+  .metric-grid {
+    grid-template-columns: 1fr;
+  }
 }

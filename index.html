@@ -6,13 +6,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Open Graph = l'apercu affiche quand le lien est partage (X, Slack, LinkedIn). -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HT3ZT6PP2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5HT3ZT6PP2');
+    </script>
+
+    <!-- Open Graph = the preview shown when the link is shared (X, Slack, LinkedIn). -->
     <meta property="og:site_name" content="Simple Robotics" />
     <meta property="og:title" content="OTRetarget: Joint Robot and Object Motion Retargeting via Optimal Transport" />
     <meta property="og:description"
         content="Jointly retargeting robot and multi-object motion from human demonstrations, using entropic optimal transport to transfer surface interactions." />
-    <!-- TODO: figer l'URL definitive de la page, ici et dans main.tex (\blfootnote{Project page: ...}) -->
+    <!-- TODO: freeze the final page URL, here and in main.tex (\blfootnote{Project page: ...}) -->
     <meta property="og:url" content="https://simple-robotics.github.io/publications/otretarget/" />
+    <meta property="og:image" content="./static/images/teaser.png" />
     <meta property="og:type" content="article" />
     <meta property="article:section" content="Research" />
     <meta property="article:tag" content="Motion Retargeting" />
@@ -24,7 +35,7 @@
     <meta property="article:author" content="https://ymontmarin.github.io/" />
     <meta property="article:author" content="https://www.ajaysathya.com" />
     <meta property="article:author" content="https://www.linkedin.com/in/guillaume-besset/" />
-    <!-- TODO: une ligne article:author par auteur ayant une page perso -->
+    <!-- TODO: one article:author line per author who has a personal page -->
 
     <link rel="icon" type="image/png" sizes="512x512" href="./static/images/favicon.png">
 
@@ -62,16 +73,16 @@
                     </span>
                 </a>
 
-                <!-- TODO: menu "More Research" vers des pages liees.
-                     Decommenter et remplacer les entrees ; un menu vide s'affiche
-                     comme une boite grise, donc le laisser commente tant qu'il est vide.
+                <!-- TODO: "More Research" menu pointing to related pages.
+                     Uncomment and replace the entries; an empty menu renders as a
+                     grey box, so leave it commented out as long as it is empty.
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
                         More Research
                     </a>
                     <div class="navbar-dropdown">
                         <a class="navbar-item" href="TODO">
-                            TODO: titre de la page liee
+                            TODO: title of the linked page
                         </a>
                     </div>
                 </div>
@@ -94,7 +105,7 @@
 
                             <div class="column has-text-centered">
                                 <div class="publication-links">
-                                    <!-- TODO: remplacer XXXX.XXXXX par l'ID arXiv une fois depose -->
+                                    <!-- TODO: replace XXXX.XXXXX with the arXiv ID once submitted -->
                                     <span class="link-block">
                                         <a href="https://arxiv.org/abs/XXXX.XXXXX"
                                             class="external-link button is-normal is-rounded is-dark">
@@ -104,8 +115,8 @@
                                             <span>arXiv</span>
                                         </a>
                                     </span>
-                                    <!-- TODO: quand le depot est public, remettre un href et retirer
-                                         la classe code-soon (la bulle disparait avec elle) -->
+                                    <!-- TODO: once the repository is public, restore an href and drop
+                                         the code-soon class (the tooltip goes away with it) -->
                                     <span class="link-block">
                                         <a class="external-link button is-normal is-rounded is-dark code-soon"
                                             aria-label="Code coming soon">
@@ -118,8 +129,8 @@
                                 </div>
                             </div>
 
-                            <!-- Photos : static/images/authors/, carrees 400x400.
-                                 Les <a> sans href sont les auteurs sans page perso connue. -->
+                            <!-- Photos: static/images/authors/, square 400x400.
+                                 The <a> with no href are the authors with no known personal page. -->
                             <div class="team-container">
                                 <div class="team-member">
                                     <a href="https://www.linkedin.com/in/guillaume-besset/" target="_blank">
@@ -190,6 +201,21 @@
         </div>
     </section>
 
+    <!-- TEASER -->
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <video autoplay muted loop playsinline controls preload="metadata">
+                <source src="./static/videos/pnp.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered">
+                A whole-body policy trained on an <b>OTRetarget</b> reference, running on a Unitree G1 with no
+                object perception and no retraining: the box is picked off the floor and placed on the table.
+                Inset: the human demonstration it was retargeted from.
+            </h2>
+        </div>
+    </section>
+    <!--/ TEASER -->
+
     <section class="section">
         <div class="container is-max-desktop">
             <!-- Abstract. -->
@@ -220,8 +246,8 @@
             </div>
             <!--/ Abstract. -->
 
-            <!-- Pipeline : figure 2 du PDF compile de la version arXiv, page 2 a 300 dpi,
-                 recadree sur la figure seule. Image et legende sont sur la meme revision. -->
+            <!-- Pipeline: figure 2 of the compiled PDF of the arXiv version, page 2 at 300 dpi,
+                 cropped to the figure alone. Image and caption come from the same revision. -->
             <div class="columns is-centered has-text-centered">
                 <div class="column is-max-desktop">
                     <div class="publication-image">
@@ -242,6 +268,140 @@
 
         </div>
     </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <h2 class="title is-3 has-text-centered">How it works</h2>
+            <div class="video-grid">
+                <figure>
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="./static/videos/capture.mp4" type="video/mp4">
+                    </video>
+                    <figcaption><b>Capture.</b> Human motion and object poses are recovered from a single
+                        demonstration. Surfaces, not skeletons, carry the interaction.</figcaption>
+                </figure>
+                <figure>
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="./static/videos/triples.mp4" type="video/mp4">
+                    </video>
+                    <figcaption><b>Proximity triples.</b> Every surface sample reads a signed distance, its
+                        closest witness point, and which side of the surface it sits on.</figcaption>
+                </figure>
+                <figure>
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="./static/videos/transport.mp4" type="video/mp4">
+                    </video>
+                    <figcaption><b>Optimal transport.</b> One entropic plan per human part and robot link,
+                        solved once in a T-pose, carries those targets across morphologies. It leaves 14% of
+                        extremal samples unmatched, against 42% for nearest neighbour.</figcaption>
+                </figure>
+                <figure>
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="./static/videos/solver.mp4" type="video/mp4">
+                    </video>
+                    <figcaption><b>Joint solve.</b> A per-frame constrained program solves the robot pose and
+                        every object pose together, so an object may move to stay reachable.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+    <!--/ HOW IT WORKS -->
+
+    <!-- RESULTS -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <h2 class="title is-3 has-text-centered">Results</h2>
+            <p class="has-text-centered result-lede">
+                Medians over the 4421 OMOMO loco-manipulation sequences, against OmniRetarget in its own
+                released world.
+            </p>
+            <div class="metric-grid">
+                <div class="metric">
+                    <div class="metric-label">Robot&ndash;object interaction</div>
+                    <div class="metric-hint">Jaccard, higher is better</div>
+                    <div class="row"><span>Ours</span><i class="bar ours" style="width:87%"></i><b>87%</b></div>
+                    <div class="row"><span>Omni</span><i class="bar base" style="width:28%"></i><b>28%</b></div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Depth error</div>
+                    <div class="metric-hint">lower is better</div>
+                    <div class="row"><span>Ours</span><i class="bar ours" style="width:30%"></i><b>8.7 mm</b></div>
+                    <div class="row"><span>Omni</span><i class="bar base" style="width:100%"></i><b>29.3 mm</b></div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Placement error</div>
+                    <div class="metric-hint">lower is better</div>
+                    <div class="row"><span>Ours</span><i class="bar ours" style="width:36%"></i><b>37 mm</b></div>
+                    <div class="row"><span>Omni</span><i class="bar base" style="width:100%"></i><b>102 mm</b></div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Style error</div>
+                    <div class="metric-hint">lower is better</div>
+                    <div class="row"><span>Ours</span><i class="bar ours" style="width:38%"></i><b>10.7&deg;</b></div>
+                    <div class="row"><span>Omni</span><i class="bar base" style="width:100%"></i><b>27.8&deg;</b></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ RESULTS -->
+
+    <!-- OBJECT GENERALIZATION -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <h2 class="title is-3 has-text-centered">One demonstration, a distribution of objects</h2>
+            <div class="publication-image">
+                <video autoplay muted loop playsinline preload="metadata" style="width:100%">
+                    <source src="./static/videos/datagen.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="content has-text-justified">
+                The same demonstration is replayed onto unseen shapes, from a ball to a beam, by transporting
+                the demonstrated witness points onto the substitute surface. Grip recall and precision stay
+                near their values on the scanned object, and the drift that appears is the adaptation the new
+                geometry requires, not an error a fixed trajectory could remove.
+            </div>
+        </div>
+    </section>
+    <!--/ OBJECT GENERALIZATION -->
+
+    <!-- SIM-TO-REAL -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <h2 class="title is-3 has-text-centered">Sim-to-real</h2>
+            <div class="publication-image">
+                <video autoplay muted loop playsinline preload="metadata" style="width:100%">
+                    <source src="./static/videos/hardware.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="content has-text-justified">
+                Tracking policies trained on <b>OTRetarget</b> references and deployed on the Unitree G1:
+                <i>spin</i> (CMU 88_10), <i>crawl</i> (CMU 133_01) and <i>cha-cha</i> (SFU), each shown next to
+                its simulated reference. Across ten AMASS clips, policies trained on our references reach a
+                mean per-joint position error of 28.8&nbsp;mm against 33.7&nbsp;mm for OmniRetarget, and reach
+                the baseline's final accuracy at one fifth of its training budget.
+            </div>
+        </div>
+    </section>
+    <!--/ SIM-TO-REAL -->
+
+    <!-- BIBTEX -->
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title is-3">BibTeX</h2>
+            <!-- TODO: fill in the venue, year and pages once the paper is accepted -->
+            <pre><code>@inproceedings{besset2026otretarget,
+  title     = {{OTRetarget}: Joint Robot and Object Motion Retargeting via Optimal Transport},
+  author    = {Besset, Guillaume and Carn, Erwann and Carecchio, Timoth\'ee and
+               Tordjman--Levavasseur, Valentin and Schramm, Fabian and
+               de Mont-Marin, Yann and Carpentier, Justin and Sathya, Ajay Suresha},
+  booktitle = {TODO},
+  year      = {TODO}
+}</code></pre>
+        </div>
+    </section>
+    <!--/ BIBTEX -->
+
     <footer class="footer">
         <div class="my-last-section">
             <div class="container">
