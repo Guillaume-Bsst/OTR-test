@@ -18,22 +18,21 @@
         * { box-sizing: border-box; }
 
         body {
-            margin: 0;
-            padding: 2.2rem 16px 5rem;
+            margin: 0 auto;
+            padding: 2.2rem 16px 6rem;
             font: 16px/1.55 'Noto Sans', system-ui, -apple-system, sans-serif;
             color: var(--ink);
             background: #fff;
-            max-width: 1000px;
-            margin-inline: auto;
+            max-width: 1060px;
         }
 
         h1 { font-size: 1.5rem; margin: 0 0 .3rem; }
 
-        .lede { color: var(--soft); margin: 0 0 2.4rem; }
+        .lede { color: var(--soft); margin: 0 0 2rem; }
 
-        section { border-top: 1px solid var(--line); padding-top: 1.6rem; margin-top: 2.4rem; }
+        section { border-top: 1px solid var(--line); padding-top: 1.5rem; margin-top: 2.4rem; }
 
-        h2 { font-size: 1.15rem; margin: 0 0 .2rem; }
+        h2 { font-size: 1.15rem; margin: 0 0 .15rem; }
 
         .where { color: var(--soft); font-size: .86rem; margin: 0 0 1rem; }
 
@@ -43,114 +42,147 @@
 
         .tilewidth { max-width: 470px; }
 
-        figcaption {
-            font-size: .88rem;
-            color: var(--soft);
-            margin-top: .5rem;
+        figure { margin: 0; }
+
+        figcaption { font-size: .88rem; color: var(--soft); margin-top: .5rem; }
+
+        .verdict {
+            font-weight: 600;
+            background: #eef3fb;
+            border-left: 3px solid var(--accent);
+            padding: .6rem .9rem;
+            border-radius: 0 6px 6px 0;
+            margin: 1rem 0;
         }
-
-        .claim { border-left: 3px solid var(--accent); padding-left: .8rem; margin: 1rem 0; }
-
-        .measure {
-            font-size: .88rem;
-            background: #f7f8fa;
-            border-radius: 6px;
-            padding: .7rem .9rem;
-            margin-top: .9rem;
-        }
-
-        .measure b { font-variant-numeric: tabular-nums; }
 
         .flag {
-            font-size: .88rem;
+            font-size: .9rem;
             border-left: 3px solid var(--warn);
-            padding-left: .8rem;
-            margin-top: .9rem;
-            color: var(--warn);
+            background: #fdf8ee;
+            padding: .6rem .9rem;
+            border-radius: 0 6px 6px 0;
+            margin-top: 1rem;
+            color: #6b4600;
         }
 
-        .q { font-weight: 600; margin-top: 1rem; }
-
-        figure { margin: 0; }
+        .dead { opacity: .62; }
 
         @media (max-width: 760px) { .pair { grid-template-columns: 1fr; } }
     </style>
 </head>
 
 <body>
-    <h1>Preview — les deux clips produits</h1>
-    <p class="lede">Page de travail, séparée du site. <code>index.html</code> n'a pas été touché.
-        Les clips sont encodés exactement comme ils le seraient sur la page (largeur 960, crf 28, muets).</p>
+    <h1>Preview — quatre décisions à prendre</h1>
+    <p class="lede">Page de travail, séparée du site. <code>index.html</code> n'est pas touché. Tous les clips
+        sont encodés comme ils le seraient sur la page.</p>
 
     <section>
-        <h2>1. Objet figé contre objet résolu conjointement</h2>
-        <p class="where">Irait dans « How it works », 4<sup>e</sup> case, à la place de <code>solver.mp4</code>.
-            Même emplacement, page inchangée en longueur. Séquence <code>largebox</code>, OMOMO sub3_003.</p>
-
-        <video autoplay muted loop playsinline controls>
-            <source src="./static/videos/jointsolve_ab.mp4" type="video/mp4">
-        </video>
-
-        <div class="measure">
-            Un seul flag sépare les deux runs ; les <code>qpos</code> sont identiques jusqu'à la frame 19, donc
-            l'A/B est contrôlé. Boîte au sommet : <b>1,54 m</b> figée contre <b>1,28 m</b> résolue, soit
-            <b>26 cm</b> plus bas. Déplacement moyen de l'objet <b>12,2 cm</b>. Pieds décollés :
-            <b>34 frames sur 202</b> côté figé (jusqu'à 64 mm), <b>0 frame</b> chez nous.
+        <h2>1. Floorlamp — l'angle est-il réparé ?</h2>
+        <p class="where">46 angles balayés. L'ancien azimut 245 était le miroir arrière du nouveau.</p>
+        <div class="pair">
+            <figure class="dead">
+                <video autoplay muted loop playsinline>
+                    <source src="./static/videos/floorlamp_ab.mp4" type="video/mp4">
+                </video>
+                <figcaption><b>Avant</b> — az 245. Le robot de dos, l'omoplate cache la main.</figcaption>
+            </figure>
+            <figure>
+                <video autoplay muted loop playsinline controls>
+                    <source src="./static/videos/floorlamp_v2.mp4" type="video/mp4">
+                </video>
+                <figcaption><b>Après</b> — az 120, coupé à la prise. De face : à gauche les mains d'Omni
+                    flottent ouvertes à côté de la tige, à droite les nôtres l'enserrent, doigts visibles de
+                    l'autre côté du montant.</figcaption>
+            </figure>
         </div>
-
-        <p class="q">Ce que je te demande de juger : à la taille d'une case de la grille 2×2, chaque panneau
-            fera environ 240 px. Est-ce que la différence se lit encore ?</p>
-        <figure class="tilewidth">
-            <video autoplay muted loop playsinline>
-                <source src="./static/videos/jointsolve_ab.mp4" type="video/mp4">
-            </video>
-            <figcaption>Le même clip à la largeur réelle qu'il aura dans la grille.</figcaption>
-        </figure>
+        <p class="verdict">À juger : est-ce que la main d'Omni « dans le vide » se lit sans qu'on te
+            l'explique ? C'est tout ce que le clip doit prouver.</p>
     </section>
 
     <section>
-        <h2>2. OmniRetarget ne referme jamais les mains sur la tige</h2>
-        <p class="where">Irait en pleine largeur en tête de « Results », au-dessus des tuiles chiffrées.
-            Séquence <code>floorlamp</code>, OMOMO sub10_031.</p>
-
-        <div class="claim">Mesuré : OmniRetarget n'amène <b>jamais</b> un poignet à moins de 110 mm de la lampe
-            — 0 frame sur 102, médiane 141 mm. Nous : les deux poignets sous 110 mm pendant 54 frames
-            consécutives, au plus près 68 mm.</div>
-
+        <h2>2. Joint solve — lisible à la taille d'une case ?</h2>
+        <p class="where">Irait dans « How it works », 4<sup>e</sup> case, à la place de <code>solver.mp4</code>.</p>
         <div class="pair">
             <figure>
                 <video autoplay muted loop playsinline controls>
-                    <source src="./static/videos/floorlamp_ab.mp4" type="video/mp4">
+                    <source src="./static/videos/jointsolve_ab.mp4" type="video/mp4">
                 </video>
-                <figcaption><b>Version complète</b> — 3,4 s. Le dernier tiers montre les deux robots après
-                    le lâcher, bras ballants : en boucle, environ une seconde où le clip ne prouve rien.</figcaption>
+                <figcaption><b>En grand.</b> Objet figé à gauche : la boîte part au-dessus de la tête, le
+                    robot la course et décolle du sol. Résolu conjointement à droite : elle reste à portée,
+                    les pieds restent au sol.</figcaption>
             </figure>
-            <figure>
-                <video autoplay muted loop playsinline controls>
-                    <source src="./static/videos/floorlamp_ab_trim.mp4" type="video/mp4">
+            <figure class="tilewidth">
+                <video autoplay muted loop playsinline>
+                    <source src="./static/videos/jointsolve_ab.mp4" type="video/mp4">
                 </video>
-                <figcaption><b>Coupée à la prise</b> — 2,3 s, frames 0 à 70. Ne montre que la fenêtre où la
-                    question de la saisie se pose. C'est celle que je retiendrais.</figcaption>
+                <figcaption><b>À la largeur réelle de la case</b> — environ 240 px par panneau.</figcaption>
             </figure>
         </div>
-
-        <div class="flag">
-            Trois réserves relevées à la production, à intégrer dans la légende finale :
-            la séquence ne contient <b>aucun levé</b> (la lampe est inclinée sur son pied, jamais soulevée) ;
-            la lampe côté Omni <b>flotte 25,6 mm au-dessus du sol</b> sur tout le clip, donc « même trajectoire
-            d'objet » serait inexact ; et le clip rend la ligne <i>scaled, obj. fixed</i> de la Table I
-            (dd 9,4 / dw 38), pas la ligne native (9,3 / 37).
-        </div>
+        <p class="verdict">À juger : si la différence ne tient pas à droite, il lui faut la pleine largeur —
+            et la page gagne un bloc.</p>
     </section>
 
     <section>
-        <h2>Ce qui n'a pas été tourné</h2>
-        <p><b>Le 4-voies <code>crawl</code></b> — tenté deux fois, illisible à la largeur web : chaque tuile suit
-            son propre bassin, donc les panneaux ne se superposent pas et le contact main-sol tombe sur la ligne
-            d'horizon à quelques pixels. À remplacer par l'image <code>crawl.png</code> du papier, déjà faite.</p>
-        <p><b>Le pick-and-place contre baselines</b> — impossible, et c'est une bonne nouvelle : les fichiers
-            d'Omni, GMR et PHC portent <code>meta_obj='none'</code>, ni boîte ni table. Aucune baseline ne peut
-            exprimer la scène. C'est la thèse du papier ; elle se dit en mots, elle ne se montre pas.</p>
+        <h2>3. Crawl — ça marche, mais il y a un prix</h2>
+        <p class="where">Caméra statique partagée, fenêtre de frames au cœur de la reptation. Le tour
+            précédent l'avait déclaré infaisable ; c'était un réglage de caméra, pas une impossibilité.</p>
+        <video autoplay muted loop playsinline controls>
+            <source src="./static/videos/crawl.mp4" type="video/mp4">
+        </video>
+        <p style="font-size:.92rem;margin-top:.7rem">Nous : paume et doigts à plat, l'ombre soudée à la main
+            à chaque appui. OmniRetarget : la main touche mais le poignet reste haut, l'avant-bras décollé.
+            GMR : la main avant flotte, son ombre détachée dessous. PHC : l'avant-bras et le pied
+            d'appui sont sectionnés par le plan du sol.</p>
+        <div class="flag">
+            <b>Le prix.</b> Pour que les quatre tuiles tombent sur le même carré de sol, un décalage planaire
+            constant a été appliqué par méthode — jusqu'à 43 cm pour PHC. Le <i>z</i> n'est jamais touché et
+            la dérive par frame est conservée, donc le contact vertical, qui est le sujet du plan, reste
+            intact. Mais c'est déplacer un résultat pour l'affichage, et ta règle est de ne jamais le faire.
+            Soit on l'écrit dans la légende, soit on renonce au clip.
+        </div>
+        <p class="verdict">À trancher : on publie avec la mention, ou on garde l'image fixe du papier ?</p>
+    </section>
+
+    <section>
+        <h2>4. Pick-and-place — nous seuls, et pourquoi pas le contraste</h2>
+        <p class="where">Scène à deux objets : la boîte est ramassée au sol et posée sur la table.</p>
+        <video autoplay muted loop playsinline controls>
+            <source src="./static/videos/pnp_sim.mp4" type="video/mp4">
+        </video>
+        <p style="font-size:.92rem;margin-top:.7rem">La boîte s'écarte de sa trajectoire démontrée pour
+            rester à portée du robot, puis revient se poser à l'endroit démontré, dessous exactement sur le
+            plateau. Aucune baseline publiée ne produit de trajectoire d'objet.</p>
+
+        <div class="flag">
+            <b>Le contraste a été tourné, et il plaide contre nous.</b> L'outil de rendu comble les objets
+            manquants avec la pose démontrée : le panneau d'une baseline affiche donc une boîte qu'elle n'a
+            jamais calculée, et le robot a l'air de la manipuler. Mesuré sur la fenêtre de portage, le
+            poignet le plus proche est même plus près de la boîte chez OmniRetarget que chez nous. Le texte
+            se bat contre l'image, et l'image gagne.
+        </div>
+        <figure class="dead" style="margin-top:1rem">
+            <video muted loop playsinline controls>
+                <source src="./static/videos/pnp_contrast.mp4" type="video/mp4">
+            </video>
+            <figcaption><b>Écarté</b> — les deux panneaux racontent la même histoire. Montré pour que tu
+                juges le refus sur pièce.</figcaption>
+        </figure>
+        <p class="verdict">À confirmer : on publie le clip seul et la phrase « aucune baseline ne produit de
+            trajectoire d'objet » reste du texte.</p>
+    </section>
+
+    <section>
+        <h2>Deux trouvailles qui dépassent le site</h2>
+        <p><b>1. L'outil de rendu invente les objets des baselines.</b> Quand un fichier de baseline ne
+            déclare pas un objet, <code>render_video.py</code> retombe sur la pose démontrée. Toute figure
+            qualitative de baseline produite avec cet outil montre donc des objets que la méthode n'a jamais
+            calculés — généreux envers le concurrent, et retournable contre nous. À auditer sur les figures
+            du papier et sur la vidéo ICRA.</p>
+        <p><b>2. <code>holov2_scaled.npz</code> ne termine pas le pick-and-place.</b> Le bassin reste bloqué
+            loin de la table et la boîte se gare sur l'arête, son dessous nettement sous le plateau. Le clip
+            ci-dessus utilise <code>holov2.npz</code>, monde natif, qui lui retombe au millimètre sur les
+            chiffres du papier. Si le fichier scaled a servi à une figure ou à une ligne de board, il faut
+            le revoir.</p>
     </section>
 </body>
 
