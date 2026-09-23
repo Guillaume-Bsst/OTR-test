@@ -380,13 +380,13 @@ body {
   gap: 1.6rem 1.4rem;
 }
 
-/* Three across: the inputs and the transfer, before the full-width solve clip. */
-.video-grid.is-three {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.video-grid.is-three figcaption {
-  text-align: left;
+/* Three tiles, still two across. The odd one out is centred under the other two
+   rather than left hanging beside an empty cell; its width is one column, i.e.
+   half the grid minus half the column gap. */
+.video-grid.is-trio > figure:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  width: calc(50% - 0.7rem);
+  margin-inline: auto;
 }
 
 .video-grid figure {
@@ -438,10 +438,13 @@ body {
   margin-top: 2.2rem;
 }
 
-/* .is-three must be named here too: it outranks a bare .video-grid rule. */
 @media screen and (max-width: 768px) {
-  .video-grid,
-  .video-grid.is-three {
+  .video-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* One column: the centring rule would shrink the odd tile to half width. */
+  .video-grid.is-trio > figure:last-child:nth-child(odd) {
+    width: auto;
   }
 }
