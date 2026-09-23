@@ -253,13 +253,14 @@
         <div class="container is-max-desktop">
             <h2 class="title is-3 has-text-centered">How it works</h2>
 
-            <!-- Pipeline: figure 2 of the compiled paper, page 2 at 300 dpi, trimmed to the
-                 figure alone. Re-extracted 23/09 from the current build: the earlier copy
-                 still wrote the proximity subscripts the other way round and called the
-                 fifth stage constrained inverse kinematics. -->
+            <!-- Pipeline: figure 2 of the ICRA submission, build 11 of 23/09, page 2 at 300 dpi,
+                 trimmed to the figure alone. That PDF is the reference. Careful: the PaperV4.4
+                 build sitting in the repo is older and writes the proximity subscripts p,c where
+                 the submission writes c,p, so the figure must be cut from the submission, never
+                 from whatever main.pdf happens to be lying around. -->
             <figure class="pipeline">
-                <a href="./static/images/pipeline-2026-09-23.jpg" title="Full size">
-                    <img src="./static/images/pipeline-2026-09-23.jpg"
+                <a href="./static/images/pipeline-icra-v11.jpg" title="Full size">
+                    <img src="./static/images/pipeline-icra-v11.jpg"
                         alt="Six stages, left to right: human motions, proximity triples, optimal transport,
                              optional data augmentation, per-frame QP solve, RL training and sim-to-real.">
                 </a>
