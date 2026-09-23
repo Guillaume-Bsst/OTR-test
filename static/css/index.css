@@ -363,9 +363,14 @@ body {
   margin: 0;
 }
 
+/* The four tiles must line up, so the box is fixed at 16:9 whatever the clip's
+   own ratio is; `contain` letterboxes rather than crops, so a clip that does
+   not match loses framing, never content. */
 .video-grid video {
   width: 100%;
   display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
   border-radius: 6px;
   background: #000;
 }
