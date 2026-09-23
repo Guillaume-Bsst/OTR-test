@@ -335,8 +335,8 @@ body {
 }
 
 /* ---- Teaser, clip grid and result tiles ----
-   The two-colour scale is blue against neutral grey, never green/red:
-   it stays readable for a deuteranope reader and in greyscale print. */
+   The two-colour scale is blue against neutral grey: it survives greyscale
+   print and does not rely on hue alone to carry the comparison. */
 .teaser {
   padding: 0 0 1.5rem 0;
 }
@@ -380,7 +380,27 @@ body {
 
 .result-lede {
   color: #4a4a4a;
-  margin-bottom: 1.6rem;
+  margin: 2rem 0 1.6rem;
+}
+
+/* Full-width proof clip: the picture that a claim in the text stands on. */
+.proof {
+  margin: 0 0 1.8rem;
+}
+
+.proof video {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+  background: #000;
+}
+
+.proof figcaption {
+  font-size: .92rem;
+  line-height: 1.5;
+  text-align: justify;
+  margin-top: .6rem;
+  color: #4a4a4a;
 }
 
 .metric-grid {
