@@ -38,7 +38,7 @@
 
     <link rel="stylesheet" href="./static/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="./static/css/index.css?v=17">
+    <link rel="stylesheet" href="./static/css/index.css?v=19">
 
 </head>
 
@@ -168,9 +168,11 @@
 
     <section class="hero teaser">
         <div class="container is-max-desktop">
-            <video autoplay muted loop playsinline controls preload="metadata">
-                <source src="./static/videos/pnp.mp4" type="video/mp4">
-            </video>
+            <figure class="clip">
+                <video muted loop playsinline controls preload="none" poster="./static/images/posters/pnp.jpg">
+                    <source src="./static/videos/pnp.mp4" type="video/mp4">
+                </video>
+            </figure>
             <h2 class="subtitle has-text-centered">
                 A Unitree G1 picks the box off the floor and places it on the table. The whole-body policy
                 was trained by reinforcement learning on an <b>OTRetarget</b> reference, and runs with no
@@ -231,21 +233,21 @@
 
             <div class="video-grid">
                 <figure>
-                    <video autoplay muted loop playsinline preload="metadata">
+                    <video muted loop playsinline controls preload="none" poster="./static/images/posters/capture.jpg">
                         <source src="./static/videos/capture.mp4" type="video/mp4">
                     </video>
                     <figcaption><b>Capture.</b> Human motion and object poses are recovered from a single
                         demonstration. Surfaces, not skeletons, carry the interaction.</figcaption>
                 </figure>
                 <figure>
-                    <video autoplay muted loop playsinline preload="metadata">
+                    <video muted loop playsinline controls preload="none" poster="./static/images/posters/triples.jpg">
                         <source src="./static/videos/triples.mp4" type="video/mp4">
                     </video>
                     <figcaption><b>Proximity triples.</b> Every surface sample reads a signed distance, its
                         closest witness point on the other surface, and the direction to it.</figcaption>
                 </figure>
                 <figure>
-                    <video autoplay muted loop playsinline preload="metadata">
+                    <video muted loop playsinline controls preload="none" poster="./static/images/posters/transport.jpg">
                         <source src="./static/videos/transport.mp4" type="video/mp4">
                     </video>
                     <figcaption><b>Optimal transport.</b> One entropic plan per human part and robot link,
@@ -253,7 +255,7 @@
                         sample receives mass, so fingertips and heels are not left behind.</figcaption>
                 </figure>
                 <figure class="witness">
-                    <video autoplay muted loop playsinline preload="metadata">
+                    <video muted loop playsinline controls preload="none" poster="./static/images/posters/witness_solve.jpg">
                         <source src="./static/videos/witness_solve.mp4" type="video/mp4">
                     </video>
                     <figcaption><b>The solve, from the inside.</b> The same pick-and-place with the
@@ -270,7 +272,7 @@
             <h2 class="title is-3 has-text-centered">Results</h2>
 
             <figure class="proof">
-                <video autoplay muted loop playsinline preload="metadata">
+                <video muted loop playsinline controls preload="none" poster="./static/images/posters/floorlamp_v2.jpg">
                     <source src="./static/videos/floorlamp_v2.mp4" type="video/mp4">
                 </video>
                 <figcaption><b>The baseline never closes a hand on the pole.</b> Same OMOMO sequence, same
@@ -281,7 +283,7 @@
             </figure>
 
             <figure class="proof">
-                <video autoplay muted loop playsinline preload="metadata">
+                <video muted loop playsinline controls preload="none" poster="./static/images/posters/crawl.jpg">
                     <source src="./static/videos/crawl.mp4" type="video/mp4">
                 </video>
                 <figcaption><b>Hands and knees on the floor.</b> A CMU sequence, one fixed camera for all
@@ -295,7 +297,7 @@
             </figure>
 
             <figure class="proof">
-                <video autoplay muted loop playsinline preload="metadata">
+                <video muted loop playsinline controls preload="none" poster="./static/images/posters/jointsolve.jpg">
                     <source src="./static/videos/jointsolve.mp4" type="video/mp4">
                 </video>
                 <figcaption><b>The object is a decision, not an input.</b> The robot pose and every object
@@ -310,11 +312,11 @@
     <section class="section">
         <div class="container is-max-desktop">
             <h2 class="title is-3 has-text-centered">One demonstration, a distribution of objects</h2>
-            <div class="publication-image">
-                <video autoplay muted loop playsinline preload="metadata" style="width:100%">
+            <figure class="clip">
+                <video muted loop playsinline controls preload="none" poster="./static/images/posters/datagen.jpg">
                     <source src="./static/videos/datagen.mp4" type="video/mp4">
                 </video>
-            </div>
+            </figure>
             <div class="content has-text-justified">
                 The same demonstration is replayed onto unseen shapes, from a ball to a beam, by transporting
                 the demonstrated witness points onto the substitute surface. The grip holds on shapes the
@@ -329,7 +331,7 @@
             <h2 class="title is-3 has-text-centered">Sim-to-real</h2>
 
             <figure class="proof">
-                <video autoplay muted loop playsinline preload="metadata">
+                <video muted loop playsinline controls preload="none" poster="./static/images/posters/pnp_kin_sim.jpg">
                     <source src="./static/videos/pnp_kin_sim.mp4" type="video/mp4">
                 </video>
                 <figcaption><b>From the solve to the policy.</b> Left, the kinematic reference our solver
@@ -340,7 +342,7 @@
             </figure>
 
             <figure class="proof">
-                <video autoplay muted loop playsinline preload="metadata">
+                <video muted loop playsinline controls preload="none" poster="./static/images/posters/pnp.jpg">
                     <source src="./static/videos/pnp.mp4" type="video/mp4">
                 </video>
                 <figcaption><b>Pick-and-place on the robot.</b> The same policy, unchanged and still blind
@@ -349,7 +351,7 @@
             </figure>
 
             <figure class="proof">
-                <video autoplay muted loop playsinline preload="metadata">
+                <video muted loop playsinline controls preload="none" poster="./static/images/posters/hardware.jpg">
                     <source src="./static/videos/hardware.mp4" type="video/mp4">
                 </video>
                 <figcaption><b>Locomotion.</b> Tracking policies trained on OTRetarget references and
@@ -361,7 +363,7 @@
 
     <section class="section" id="BibTeX">
         <div class="container is-max-desktop content">
-            <h2 class="title is-3">BibTeX</h2>
+            <h2 class="title is-3">BibTeX<button class="copy-bib" type="button">Copy</button></h2>
             <pre><code>@misc{besset2026otretarget,
   title         = {{OTRetarget}: Joint Robot and Object Motion Retargeting via Optimal Transport},
   author        = {Besset, Guillaume and Carn, Erwann and Carecchio, Timoth\'ee and
@@ -394,6 +396,72 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        (function () {
+            var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var clips = [].slice.call(document.querySelectorAll('video'));
+            clips.forEach(function (v) { v.removeAttribute('controls'); });
+
+            function box(v) { return v.closest('figure') || v.parentNode; }
+            function mark(v) { box(v).classList.toggle('is-paused', v.paused); }
+
+            clips.forEach(function (v) {
+                v.dataset.play = still ? '0' : '1';
+                if (still) { v.pause(); }
+                v.addEventListener('click', function () {
+                    v.dataset.play = v.paused ? '1' : '0';
+                    if (v.paused) { v.play().catch(function () {}); } else { v.pause(); }
+                });
+                ['play', 'pause'].forEach(function (e) { v.addEventListener(e, function () { mark(v); }); });
+                mark(v);
+            });
+
+            if (!('IntersectionObserver' in window)) { return; }
+            var eye = new IntersectionObserver(function (seen) {
+                seen.forEach(function (s) {
+                    var v = s.target;
+                    if (s.isIntersecting) {
+                        if (v.dataset.play === '1') { v.play().catch(function () {}); }
+                    } else if (!v.paused) {
+                        v.pause();
+                    }
+                });
+            }, { threshold: 0.2 });
+            clips.forEach(function (v) { eye.observe(v); });
+        }());
+
+        (function () {
+            var button = document.querySelector('.copy-bib');
+            var entry = document.querySelector('#BibTeX code');
+            if (!button || !entry) { return; }
+            function done(ok) {
+                button.textContent = ok ? 'Copied' : 'Press Ctrl+C';
+                setTimeout(function () { button.textContent = 'Copy'; }, 2000);
+            }
+            button.addEventListener('click', function () {
+                var text = entry.innerText;
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(fallback(text)); });
+                } else {
+                    done(fallback(text));
+                }
+            });
+            function fallback(text) {
+                var pad = document.createElement('textarea');
+                pad.value = text;
+                pad.setAttribute('readonly', '');
+                pad.style.position = 'fixed';
+                pad.style.opacity = '0';
+                document.body.appendChild(pad);
+                pad.select();
+                var ok = false;
+                try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+                document.body.removeChild(pad);
+                return ok;
+            }
+        }());
+    </script>
 </body>
 
 </html>
