@@ -377,22 +377,14 @@
 
             <figure class="proof">
                 <video autoplay muted loop playsinline preload="metadata">
-                    <source src="./static/videos/pnp_s2r.mp4" type="video/mp4">
+                    <source src="./static/videos/pnp_chain.mp4" type="video/mp4">
                 </video>
-                <figcaption><b>Pick-and-place, two objects.</b> Left, the kinematic reference our solver
-                    returns: the box leaves its demonstrated path to stay within reach, then comes back to
-                    the demonstrated pose with its underside on the tabletop. Right, the robot trained to
-                    track that reference, completing six of eight trials with no object perception and no
-                    retraining.</figcaption>
-            </figure>
-
-            <figure class="proof">
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="./static/videos/isaac_pnp.mp4" type="video/mp4">
-                </video>
-                <figcaption><b>In between: the policy learning the task under physics.</b> The scene runs in
-                    many parallel instances, each tracking the same reference, with contacts and dynamics
-                    resolved. What the robot above executes is what comes out of this.</figcaption>
+                <figcaption><b>Pick-and-place, two objects — from the solve to the robot.</b> The kinematic
+                    reference our solver returns, where the box leaves its demonstrated path to stay within
+                    reach and then comes back to the demonstrated pose with its underside on the tabletop.
+                    Then the policy learning to track that reference under physics, many instances of the
+                    scene at once. Then the robot itself, six of eight trials, with no object perception and
+                    no retraining.</figcaption>
             </figure>
 
             <figure class="proof">
