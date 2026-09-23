@@ -210,8 +210,8 @@
             </video>
             <h2 class="subtitle has-text-centered">
                 A Unitree G1 picks the box off the floor and places it on the table. The whole-body policy
-                was trained on an <b>OTRetarget</b> reference and runs with no object perception and no
-                retraining. Inset, the human demonstration it started from.
+                was trained by reinforcement learning on an <b>OTRetarget</b> reference, and runs with no
+                object perception and no retraining. Inset, the human demonstration it started from.
             </h2>
         </div>
     </section>
@@ -271,8 +271,8 @@
                     between them. A single transport plan, baked once in a T-pose, carries those readings
                     onto the robot. A per-frame constrained program then arbitrates them against the
                     demonstrated style and solves the robot pose and every object pose in one go. The dashed
-                    stage is optional: it swaps the object for another one. The clips below walk through it.
-                    Click the figure for the full-size version.</figcaption>
+                    stage is optional: it swaps the object for another one. Click the figure for the
+                    full-size version.</figcaption>
             </figure>
 
             <div class="video-grid">
@@ -325,7 +325,8 @@
                 <video autoplay muted loop playsinline preload="metadata">
                     <source src="./static/videos/floorlamp_v2.mp4" type="video/mp4">
                 </video>
-                <figcaption><b>The baseline never closes a hand on the pole.</b> Same sequence, same world.
+                <figcaption><b>The baseline never closes a hand on the pole.</b> Same OMOMO sequence, same
+                    world.
                     Ours grips the shaft with both hands and holds it through the reach. OmniRetarget leaves
                     the hand open in the air beside the shaft. It recovers none of the demonstrated contact.
                 </figcaption>
@@ -335,7 +336,8 @@
                 <video autoplay muted loop playsinline preload="metadata">
                     <source src="./static/videos/crawl.mp4" type="video/mp4">
                 </video>
-                <figcaption><b>Hands and knees on the floor.</b> One fixed camera for all four panels.
+                <figcaption><b>Hands and knees on the floor.</b> A CMU sequence, one fixed camera for all
+                    four panels.
                     OTRetarget lays both hands flat on the ground, as the demonstration does. OmniRetarget
                     reaches the ground with the wrist bent. GMR represents no terrain and leaves the lead
                     hand hovering. PHC drives the forearm and the supporting foot through the floor. Each
@@ -388,17 +390,18 @@
                 </video>
                 <figcaption><b>From the solve to the policy.</b> Left, the kinematic reference our solver
                     returns. The box leaves its demonstrated path to stay within reach, then comes back to
-                    the demonstrated pose with its underside on the tabletop. Right, the policy learning to
-                    track that reference in a simulator, many instances of the scene at once.</figcaption>
+                    the demonstrated pose with its underside on the tabletop. Right, the reinforcement
+                    learning run that trains a policy to track it, many instances of the scene at
+                    once.</figcaption>
             </figure>
 
             <figure class="proof">
                 <video autoplay muted loop playsinline preload="metadata">
                     <source src="./static/videos/pnp.mp4" type="video/mp4">
                 </video>
-                <figcaption><b>Pick-and-place on the robot.</b> The same policy runs on the physical G1 with
-                    no object perception and no retraining, and completes six of eight trials. Inset, the
-                    human demonstration it all started from.</figcaption>
+                <figcaption><b>Pick-and-place on the robot.</b> The same policy, unchanged and still blind
+                    to the object, completes six of eight trials on the physical G1. Inset, the human
+                    demonstration it all started from.</figcaption>
             </figure>
 
             <figure class="proof">
