@@ -48,7 +48,7 @@
     <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="./static/css/index.css?v=11">
+    <link rel="stylesheet" href="./static/css/index.css?v=12">
 
 </head>
 
@@ -252,6 +252,26 @@
     <section class="section">
         <div class="container is-max-desktop">
             <h2 class="title is-3 has-text-centered">How it works</h2>
+
+            <!-- Pipeline: figure 2 of the compiled paper, page 2 at 300 dpi, trimmed to the
+                 figure alone. Re-extracted 23/09 from the current build: the earlier copy
+                 still wrote the proximity subscripts the other way round and called the
+                 fifth stage constrained inverse kinematics. -->
+            <figure class="pipeline">
+                <a href="./static/images/pipeline.jpg?v=3" title="Full size">
+                    <img src="./static/images/pipeline.jpg?v=3"
+                        alt="Six stages, left to right: human motions, proximity triples, optimal transport,
+                             optional data augmentation, per-frame QP solve, RL training and sim-to-real.">
+                </a>
+                <figcaption><b>One demonstration, six stages.</b> A capture enters as meshes. Every probe on
+                    one surface reads its distance to the other, the point it reads it at, and the direction
+                    between them. A single transport plan, baked once in a T-pose, carries those readings
+                    onto the robot. A per-frame constrained program then arbitrates them against the
+                    demonstrated style and solves the robot pose and every object pose in one go. The dashed
+                    stage is optional: it swaps the object for another one. The four clips below walk through
+                    it; click the figure for the full-size version.</figcaption>
+            </figure>
+
             <div class="video-grid">
                 <figure>
                     <video autoplay muted loop playsinline preload="metadata">

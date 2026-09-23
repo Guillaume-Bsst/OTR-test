@@ -353,6 +353,27 @@ body {
   margin-top: 0.9rem;
 }
 
+/* Pipeline figure: the map the four tiles below are read against. It comes from
+   the paper, so it carries small type; the anchor gives the full-size file to
+   anyone who wants to read the formulas. */
+.pipeline {
+  margin: 0 0 2rem;
+}
+
+.pipeline img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+}
+
+.pipeline figcaption {
+  font-size: 0.92rem;
+  line-height: 1.45;
+  text-align: justify;
+  margin-top: 0.7rem;
+  color: #4a4a4a;
+}
+
 .video-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
