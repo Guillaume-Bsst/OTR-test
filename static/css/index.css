@@ -270,3 +270,22 @@ figure.clip video {
   background: #000;
   cursor: pointer;
 }
+
+.fa-svg {
+  width: 1em;
+  height: 1em;
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .pipeline a {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pipeline img {
+    width: 900px;
+    max-width: none;
+  }
+}
