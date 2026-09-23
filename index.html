@@ -48,7 +48,7 @@
     <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="./static/css/index.css?v=14">
+    <link rel="stylesheet" href="./static/css/index.css?v=15">
 
 </head>
 
@@ -273,7 +273,7 @@
                     click the figure for the full-size version.</figcaption>
             </figure>
 
-            <div class="video-grid is-trio">
+            <div class="video-grid">
                 <figure>
                     <video autoplay muted loop playsinline preload="metadata">
                         <source src="./static/videos/capture.mp4" type="video/mp4">
@@ -296,24 +296,21 @@
                         solved once in a T-pose, carries those targets across morphologies. Every human
                         sample receives mass, so fingertips and heels are not left behind.</figcaption>
                 </figure>
+                <!-- The solve watched from the inside. Cut from
+                     HoloV3/demo_results/femto14/rushes_witness_solve/forme_vanilla.mp4 (--witness-solve,
+                     four families), 70% speed, cropped to 1450x950 at (250,130) of the 1920x1080 rush. -->
+                <figure class="witness">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="./static/videos/witness_solve.mp4" type="video/mp4">
+                    </video>
+                    <figcaption><b>The solve, from the inside.</b> The same pick-and-place with the residuals
+                        the program is minimising drawn on it. Each segment joins a control point to its
+                        witness on the other surface: <b>yellow</b> for the target field carried over by
+                        transport, <b>blue</b> for that field re-evaluated at the pose the solver returns.
+                        Feet on the floor, hands onto the box, the box onto the floor then onto the tabletop.
+                        Only the active points are drawn, five hundred or so at a time out of 5302.</figcaption>
+                </figure>
             </div>
-
-            <!-- The solve watched from the inside. Cut from
-                 HoloV3/demo_results/femto14/rushes_witness_solve/forme_vanilla.mp4 (--witness-solve, four
-                 families), 70% speed, cropped to 1450x950 at (250,130) of the 1920x1080 rush. -->
-            <figure class="proof witness">
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="./static/videos/witness_solve.mp4" type="video/mp4">
-                </video>
-                <figcaption><b>The solve, from the inside.</b> The same pick-and-place, with the residuals
-                    the program is minimising drawn on top of it. Each segment joins a control point to its
-                    witness on the other surface: <b>yellow</b> for the target field carried over by
-                    transport, <b>blue</b> for that same field re-evaluated at the pose the solver returns.
-                    Feet against the floor, hands onto the box, the box onto the floor and then onto the
-                    tabletop. The objects are drawn as the point clouds the residuals are written on, and
-                    only the active points are shown — some five hundred at a time out of 5302 — which is
-                    what makes the picture, and the solve, tractable.</figcaption>
-            </figure>
         </div>
     </section>
     <!--/ HOW IT WORKS -->

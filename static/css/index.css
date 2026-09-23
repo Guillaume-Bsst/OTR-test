@@ -380,13 +380,11 @@ body {
   gap: 1.6rem 1.4rem;
 }
 
-/* Three tiles, still two across. The odd one out is centred under the other two
-   rather than left hanging beside an empty cell; its width is one column, i.e.
-   half the grid minus half the column gap. */
-.video-grid.is-trio > figure:last-child:nth-child(odd) {
-  grid-column: 1 / -1;
-  width: calc(50% - 0.7rem);
-  margin-inline: auto;
+/* The solve clip is 1.53:1, not 16:9. Letterboxing it inside the tile's box
+   would cost a third of the witness segments' size for nothing, so it keeps its
+   own ratio; the row is 43 px taller on that side. */
+.video-grid figure.witness video {
+  aspect-ratio: auto;
 }
 
 .video-grid figure {
@@ -433,18 +431,8 @@ body {
   color: #4a4a4a;
 }
 
-/* The solve clip closes the section, so it needs air after the row of tiles. */
-.proof.witness {
-  margin-top: 2.2rem;
-}
-
 @media screen and (max-width: 768px) {
   .video-grid {
     grid-template-columns: 1fr;
-  }
-
-  /* One column: the centring rule would shrink the odd tile to half width. */
-  .video-grid.is-trio > figure:last-child:nth-child(odd) {
-    width: auto;
   }
 }
