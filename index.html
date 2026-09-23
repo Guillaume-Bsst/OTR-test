@@ -48,7 +48,7 @@
     <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="./static/css/index.css?v=15">
+    <link rel="stylesheet" href="./static/css/index.css?v=16">
 
 </head>
 
@@ -298,17 +298,16 @@
                 </figure>
                 <!-- The solve watched from the inside. Cut from
                      HoloV3/demo_results/femto14/rushes_witness_solve/forme_vanilla.mp4 (--witness-solve,
-                     four families), 70% speed, cropped to 1450x950 at (250,130) of the 1920x1080 rush. -->
+                     four families), 70% speed, cropped 16:9 to 1737x977 at (183,103) of the 1920x1080
+                     rush so the tile matches the other three exactly. -->
                 <figure class="witness">
                     <video autoplay muted loop playsinline preload="metadata">
                         <source src="./static/videos/witness_solve.mp4" type="video/mp4">
                     </video>
-                    <figcaption><b>The solve, from the inside.</b> The same pick-and-place with the residuals
-                        the program is minimising drawn on it. Each segment joins a control point to its
-                        witness on the other surface: <b>yellow</b> for the target field carried over by
-                        transport, <b>blue</b> for that field re-evaluated at the pose the solver returns.
-                        Feet on the floor, hands onto the box, the box onto the floor then onto the tabletop.
-                        Only the active points are drawn, five hundred or so at a time out of 5302.</figcaption>
+                    <figcaption><b>The solve, from the inside.</b> The same pick-and-place with the
+                        residuals drawn on it: <b>yellow</b> the target field carried over by transport,
+                        <b>blue</b> that field re-evaluated at the pose the solver returns. Feet on the
+                        floor, hands onto the box, the box onto the tabletop.</figcaption>
                 </figure>
             </div>
         </div>

@@ -374,18 +374,15 @@ body {
   color: #4a4a4a;
 }
 
+/* Every cell the same box, caption included: the rows share one height, so a
+   long caption grows all four cells rather than staggering them. */
 .video-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
   gap: 1.6rem 1.4rem;
 }
 
-/* The solve clip is 1.53:1, not 16:9. Letterboxing it inside the tile's box
-   would cost a third of the witness segments' size for nothing, so it keeps its
-   own ratio; the row is 43 px taller on that side. */
-.video-grid figure.witness video {
-  aspect-ratio: auto;
-}
 
 .video-grid figure {
   margin: 0;
