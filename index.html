@@ -301,7 +301,8 @@
                     <source src="./static/videos/jointsolve.mp4" type="video/mp4">
                 </video>
                 <figcaption><b>The object is solved, not imposed.</b> The robot pose and every object
-                    pose are solved together, so an object may move to stay reachable. Pinned to the
+                    pose are solved together, so the whole contact structure survives the change of body:
+                    the hands on the object, the object on the ground and on the other objects. Pinned to the
                     demonstration, the box ends up above the robot's own head and the robot chases it off
                     the floor. Solved jointly, it stays within reach and the feet stay down.</figcaption>
             </figure>
@@ -320,8 +321,11 @@
             <div class="content has-text-justified">
                 The same demonstration is replayed onto unseen shapes, from a ball to a beam, by transporting
                 the demonstrated witness points onto the substitute surface. The grip holds on shapes the
-                capture never touched. The object leaves its demonstrated path by exactly what it takes for
-                the hands to meet the new geometry, which a replayed trajectory cannot do.
+                capture never touched. A substitute shape does not sit where the demonstrated one did, so it
+                is free to leave the demonstrated path and the rest of the scene re-solves with it: the new
+                object still clears the floor and comes to rest on the tabletop, and the hands stay on its
+                surface. Replaying the demonstrated poses would hold the new shape on a path that was solved
+                for a different geometry.
             </div>
         </div>
     </section>
